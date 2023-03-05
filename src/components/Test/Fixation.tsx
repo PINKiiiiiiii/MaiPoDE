@@ -63,8 +63,8 @@ const Fixation: React.FC<any> = (props) => {
     const video = document.getElementById("bg-video") as HTMLVideoElement;
     video.loop = false;
     video.addEventListener("ended", function () {
-      webgazer.showPredictionPoints(false);
       webgazer.pause();
+      webgazer.showPredictionPoints(false);
       const btn = document.createElement("button");
       btn.innerHTML = "หน้าถัดไป";
       btn.setAttribute("class", "btn btn-info next-test-btn");

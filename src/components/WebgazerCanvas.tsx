@@ -200,6 +200,7 @@ const WebgazerCanvas: React.FC<{}> = () => {
   };
   const nextPage = (): void => {
     navigate("/fixation");
+    webgazer.pause();
   };
   const gazeListener = useCallback((data: any, clock: string): void => {
     // console.log(data);
