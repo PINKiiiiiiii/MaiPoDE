@@ -9,7 +9,7 @@ import "./../../PoDE/css/video.css";
 import smoothpursuit from "./../../PoDE/Video/smoothpursuit.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import smoothpursuitAudio from "./../../PoDE/Audio/smoothpursuit.mp3";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import {
   getStorage,
@@ -64,6 +64,28 @@ const Smoothpursuit: React.FC<any> = (props) => {
     const video = document.getElementById("bg-video") as HTMLVideoElement;
     video.loop = false;
     video.addEventListener("ended", function () {
+      const csv: string = arr.current
+        .map((fields: string[]): string => {
+          return fields.join(",");
+        })
+        .join("\n");
+      const dl: string = `data:text/csv,${csv}`;
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        `${props.id + " smooth " + Date() + ".csv"}`
+      );
+
+      // 'file' comes from the Blob or File API
+      uploadString(storageRef, dl, "data_url").then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+          const docRef = doc(db, "Results", `${props.storageId}`);
+          console.log(docRef);
+          updateDoc(docRef, {
+            Smooth: url,
+          });
+        });
+      });
       webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
@@ -74,32 +96,7 @@ const Smoothpursuit: React.FC<any> = (props) => {
       btn.style.fontFamily = "Anuphan";
       btn.addEventListener("click", function () {
         navigate("/vpctask");
-        const csv: string = arr.current
-          .map((fields: string[]): string => {
-            return fields.join(",");
-          })
-          .join("\n");
-        const dl: string = `data:text/csv,${csv}`;
-        const storage = getStorage();
-        const storageRef = ref(
-          storage,
-          `${props.id + " smooth " + Date() + ".csv"}`
-        );
 
-        // 'file' comes from the Blob or File API
-        uploadString(storageRef, dl, "data_url").then((snapshot) => {
-          getDownloadURL(storageRef).then((url) => {
-            console.log(url);
-            const docRef = collection(db, "Results");
-            console.log(docRef);
-            addDoc(docRef, {
-              User: props.id,
-              Time: new Date(),
-              Smoothpursuit: url,
-              id: props.storageId,
-            });
-          });
-        });
         // webgazer.pause();
 
         //   const csv = arr.map((fields) => fields.join(",")).join("\n");

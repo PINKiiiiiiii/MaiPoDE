@@ -63,6 +63,42 @@ const Fixation: React.FC<any> = (props) => {
     const video = document.getElementById("bg-video") as HTMLVideoElement;
     video.loop = false;
     video.addEventListener("ended", function () {
+      const csv: string = arr.current
+        .map((fields: string[]): string => {
+          return fields.join(",");
+        })
+        .join("\n");
+
+      const dl: string = `data:text/csv,${csv}`;
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        `${props.id + " fixation " + Date() + ".csv"}`
+      );
+
+      // 'file' comes from the Blob or File API
+      uploadString(storageRef, dl, "data_url").then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+          addDoc(collection(db, "Results"), {
+            User: props.id,
+            Time: new Date(),
+            Fixation: url,
+          });
+
+          const getId = async () => {
+            const q = query(
+              collection(db, "Results"),
+              where("Fixation", "==", url)
+            );
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+              props.setStorageId(doc.id);
+              console.log(doc.id);
+            });
+          };
+          getId();
+        });
+      });
       webgazer.pause();
       webgazer.showPredictionPoints(false);
       const btn = document.createElement("button");
@@ -73,42 +109,7 @@ const Fixation: React.FC<any> = (props) => {
       btn.style.fontFamily = "Anuphan";
       btn.addEventListener("click", function () {
         navigate("/prosaccade");
-        const csv: string = arr.current
-          .map((fields: string[]): string => {
-            return fields.join(",");
-          })
-          .join("\n");
 
-        const dl: string = `data:text/csv,${csv}`;
-        const storage = getStorage();
-        const storageRef = ref(
-          storage,
-          `${props.id + " fixation " + Date() + ".csv"}`
-        );
-
-        // 'file' comes from the Blob or File API
-        uploadString(storageRef, dl, "data_url").then((snapshot) => {
-          getDownloadURL(storageRef).then((url) => {
-            addDoc(collection(db, "Results"), {
-              User: props.id,
-              Time: new Date(),
-              Fixation: url,
-            });
-
-            const getId = async () => {
-              const q = query(
-                collection(db, "Results"),
-                where("Fixation", "==", url)
-              );
-              const querySnapshot = await getDocs(q);
-              querySnapshot.forEach((doc) => {
-                props.setStorageId(doc.id);
-                console.log(doc.id);
-              });
-            };
-            getId();
-          });
-        });
         // .then(() => {
         //   console.log(link);
         //   });

@@ -9,7 +9,7 @@ import "./../../PoDE/css/video.css";
 import prosaccade from "./../../PoDE/Video/prosaccade.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import prosaccadeAudio from "./../../PoDE/Audio/prosaccade.mp3";
-import { collection, addDoc, doc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import {
   getStorage,
@@ -32,6 +32,7 @@ const arrHead: string[] = [
 
 const Prosaccade: React.FC<any> = (props) => {
   const arr = useRef<string[][]>([arrHead]);
+
   useEffect(() => {
     webgazer.applyKalmanFilter(true);
     webgazer.showPredictionPoints(true);
@@ -64,6 +65,28 @@ const Prosaccade: React.FC<any> = (props) => {
     const video = document.getElementById("bg-video") as HTMLVideoElement;
     video.loop = false;
     video.addEventListener("ended", function () {
+      const csv: string = arr.current
+        .map((fields: string[]): string => {
+          return fields.join(",");
+        })
+        .join("\n");
+      const dl: string = `data:text/csv,${csv}`;
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        `${props.id + " prosaccade " + Date() + ".csv"}`
+      );
+
+      // 'file' comes from the Blob or File API
+      uploadString(storageRef, dl, "data_url").then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+          const docRef = doc(db, "Results", `${props.storageId}`);
+          console.log(docRef);
+          updateDoc(docRef, {
+            Prosaccade: url,
+          });
+        });
+      });
       webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
@@ -74,32 +97,7 @@ const Prosaccade: React.FC<any> = (props) => {
       btn.style.fontFamily = "Anuphan";
       btn.addEventListener("click", function () {
         navigate("/antisaccade");
-        const csv: string = arr.current
-          .map((fields: string[]): string => {
-            return fields.join(",");
-          })
-          .join("\n");
-        const dl: string = `data:text/csv,${csv}`;
-        const storage = getStorage();
-        const storageRef = ref(
-          storage,
-          `${props.id + " prosaccade " + Date() + ".csv"}`
-        );
 
-        // 'file' comes from the Blob or File API
-        uploadString(storageRef, dl, "data_url").then((snapshot) => {
-          getDownloadURL(storageRef).then((url) => {
-            console.log(url);
-            const docRef = collection(db, "Results");
-            console.log(docRef);
-            addDoc(docRef, {
-              User: props.id,
-              Time: new Date(),
-              Prosaccade: url,
-              id: props.storageId,
-            });
-          });
-        });
         // webgazer.pause();
 
         //   const csv = arr.map((fields) => fields.join(",")).join("\n");

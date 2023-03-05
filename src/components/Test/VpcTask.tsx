@@ -9,7 +9,7 @@ import "./../../PoDE/css/video.css";
 import vpc from "../../Videos/vpctask.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import vpcAudio from "./../../PoDE/Audio/vpctask.mp3";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import {
   getStorage,
@@ -64,6 +64,28 @@ const VpcTask: React.FC<any> = (props) => {
     const video = document.getElementById("bg-video") as HTMLVideoElement;
     video.loop = false;
     video.addEventListener("ended", function () {
+      const csv: string = arr.current
+        .map((fields: string[]): string => {
+          return fields.join(",");
+        })
+        .join("\n");
+      const dl: string = `data:text/csv,${csv}`;
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        `${props.id + " vpc " + Date() + ".csv"}`
+      );
+
+      // 'file' comes from the Blob or File API
+      uploadString(storageRef, dl, "data_url").then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+          const docRef = doc(db, "Results", `${props.storageId}`);
+          console.log(docRef);
+          updateDoc(docRef, {
+            VPC: url,
+          });
+        });
+      });
       webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
@@ -75,32 +97,6 @@ const VpcTask: React.FC<any> = (props) => {
       btn.addEventListener("click", function () {
         webgazer.end();
         navigate("/signedin/result");
-        const csv: string = arr.current
-          .map((fields: string[]): string => {
-            return fields.join(",");
-          })
-          .join("\n");
-        const dl: string = `data:text/csv,${csv}`;
-        const storage = getStorage();
-        const storageRef = ref(
-          storage,
-          `${props.id + " vpc " + Date() + ".csv"}`
-        );
-
-        // 'file' comes from the Blob or File API
-        uploadString(storageRef, dl, "data_url").then((snapshot) => {
-          getDownloadURL(storageRef).then((url) => {
-            console.log(url);
-            const docRef = collection(db, "Results");
-            console.log(docRef);
-            addDoc(docRef, {
-              User: props.id,
-              Time: new Date(),
-              VPC: url,
-              id: props.storageId,
-            });
-          });
-        });
 
         // webgazer.pause();
 
