@@ -82,7 +82,7 @@ const Fixation: React.FC<any> = (props) => {
           const docRef = doc(db, "Results", `${props.storageId}`);
           console.log(docRef);
           updateDoc(docRef, {
-            antisaccade: url,
+            Antisaccade: url,
           });
         });
       });
