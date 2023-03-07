@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import fixation from "./../../PoDE/Video/Fixation.mp4";
+import fixation from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import fixationAudio from "./../../PoDE/Audio/Fixation.mp3";
 import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
@@ -83,20 +83,25 @@ const Fixation: React.FC<any> = (props) => {
             User: props.id,
             Time: new Date(),
             Fixation: url,
-          });
+            Finish: false,
+          })
+            .then((docRef) => {
+              props.setStorageId(docRef.id);
+            })
+            .catch((error) => console.error("Error adding document: ", error));
 
-          const getId = async () => {
-            const q = query(
-              collection(db, "Results"),
-              where("Fixation", "==", url)
-            );
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-              props.setStorageId(doc.id);
-              console.log(doc.id);
-            });
-          };
-          getId();
+          // const getId = async () => {
+          //   const q = query(
+          //     collection(db, "Results"),
+          //     where("Fixation", "==", url)
+          //   );
+          //   const querySnapshot = await getDocs(q);
+          //   querySnapshot.forEach((doc) => {
+
+          //     console.log(doc.id);
+          //   });
+          // };
+          // getId();
         });
       });
       webgazer.pause();

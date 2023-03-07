@@ -46,7 +46,7 @@ function App(props) {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/signup" element={<SignupUser />} />
+      <Route path="/signup" element={<SignupUser setId={setId} />} />
       <Route path="signedin/*" element={<Navbar id={id} />} />
       <Route path="admin/*" element={<NavbarDoc />} />
       <Route path="/calibrate" element={<WebgazerCanvas />} />

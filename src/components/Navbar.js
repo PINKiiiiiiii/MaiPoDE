@@ -116,7 +116,10 @@ function Navbar(props) {
       <Routes>
         <Route path="home" element={<Home />} />
         <Route path="test" element={<Test id={props.id} />} />
-        <Route path="records" element={<Records />} />
+        <Route
+          path="records"
+          element={<Records id={props.id} finish={props.finish} />}
+        />
         <Route path="alzheimer's" element={<Alzheimer />} />
         <Route path="aboutus" element={<Aboutus />} />
         <Route path="result" element={<Result />} />

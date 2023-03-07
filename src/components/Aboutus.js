@@ -1,7 +1,7 @@
-import cambodia from "./Picture/Cambodia.jpg";
-import Pinky from "./Picture/Pinky.jpeg";
-import Lenny from "./Picture/Lenny.jpeg";
-import Tin from "./Picture/Tin.jpeg";
+import cambodia from "./Picture/us.jpg";
+import Pinky from "./Picture/pinky.jpg";
+import Lenny from "./Picture/lenny.jpg";
+import Tin from "./Picture/tin.jpg";
 import one from "./Picture/1.png";
 import two from "./Picture/2.jpg";
 import three from "./Picture/3.png";
@@ -12,7 +12,7 @@ import call from "./Picture/Call.png";
 function Aboutus() {
   return (
     <div className="container-fluid" style={{ padding: "0px" }}>
-      <img src={cambodia} style={{ width: "100%", opacity: "0.2" }} />
+      <img src={cambodia} style={{ width: "100%", opacity: "0.3" }} />
       <h1
         className="centered-about"
         style={{

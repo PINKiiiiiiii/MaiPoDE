@@ -8,7 +8,7 @@ import nj from "numjs";
 import reload from "./Picture/reload.png";
 import play from "./Picture/play.png";
 
-import exampleVideoSrc from "./../Videos/Example.mp4";
+import exampleVideoSrc from "./Video/Example.mp4";
 
 const DEBUG: boolean = true;
 const N_BTNS: number = 9;
@@ -336,7 +336,7 @@ const WebgazerCanvas: React.FC<{}> = () => {
         <nav
           id="webgazer-navbar"
           className="navbar navbar-expand-lg"
-          style={{ backgroundColor: "#10167b" }}
+          style={{ backgroundColor: "#3d5a80" }}
         >
           <div className="container-fluid">
             <button className="btn btn-light" onClick={handleRestartBtn}>

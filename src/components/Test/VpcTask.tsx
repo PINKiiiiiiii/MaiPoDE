@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import vpc from "../../Videos/vpctask.mp4";
+import vpc from "./../Video/vpctask.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import vpcAudio from "./../../PoDE/Audio/vpctask.mp3";
 import { doc, updateDoc } from "firebase/firestore";
@@ -83,6 +83,7 @@ const VpcTask: React.FC<any> = (props) => {
           console.log(docRef);
           updateDoc(docRef, {
             VPC: url,
+            Finish: true,
           });
         });
       });

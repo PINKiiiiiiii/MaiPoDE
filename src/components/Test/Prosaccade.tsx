@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import prosaccade from "./../../PoDE/Video/prosaccade.mp4";
+import prosaccade from "./../Video/prosaccade.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import prosaccadeAudio from "./../../PoDE/Audio/prosaccade.mp3";
 import { collection, addDoc, doc, updateDoc } from "firebase/firestore";

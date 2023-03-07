@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import smoothpursuit from "./../../PoDE/Video/smoothpursuit.mp4";
+import smoothpursuit from "./../Video/smoothpursuit.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import smoothpursuitAudio from "./../../PoDE/Audio/smoothpursuit.mp3";
 import { doc, updateDoc } from "firebase/firestore";

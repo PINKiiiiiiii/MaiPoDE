@@ -25,7 +25,6 @@ const SignupUser = () => {
     Birthday: "",
     OtherDisease: "",
     Email: "",
-    Password: "",
     FamilyHasAD: false,
   });
 
@@ -79,7 +78,6 @@ const SignupUser = () => {
       Birthday: new Date(formValues.current.Birthday),
       OtherDisease: formValues.current.OtherDisease,
       Email: formValues.current.Email,
-      Password: formValues.current.Password,
       FamilyHasAD: Boolean(formValues.current.FamilyHasAD),
     });
   };

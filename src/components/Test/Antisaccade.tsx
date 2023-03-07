@@ -2,11 +2,10 @@ import { memo, useCallback, useEffect, useRef, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { Typography } from "@mui/material";
 import webgazer from "../../Scripts/Webgazer/index";
-import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import antisaccade from "./../../PoDE/Video/antisaccade.mp4";
+import antisaccade from "./../Video/antisaccade.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import antisaccadeAudio from "./../../PoDE/Audio/antisaccade.mp3";
 import { doc, updateDoc } from "firebase/firestore";
@@ -30,7 +29,7 @@ const arrHead: string[] = [
   "right-y",
 ];
 
-const Fixation: React.FC<any> = (props) => {
+const Antisaccade: React.FC<any> = (props) => {
   const arr = useRef<string[][]>([arrHead]);
   useEffect(() => {
     webgazer.setGazeListener(gazeListener);
@@ -118,4 +117,4 @@ const Fixation: React.FC<any> = (props) => {
     </div>
   );
 };
-export default memo(Fixation);
+export default memo(Antisaccade);
