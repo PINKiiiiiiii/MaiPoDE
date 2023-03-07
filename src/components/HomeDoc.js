@@ -7,120 +7,107 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { CircularProgressbar } from "react-circular-progressbar";
-import BarChart from "./BarChart";
+import BarChartDoc from "./BarChartDoc";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import user from "./Picture/user.png";
+import userad from "./Picture/userad.png";
 
 const rows = [
   {
-    name: "เลนนี",
-    lastname: "โธมัส",
+    name: "สมศรี",
+    lastname: "ไพรินทราภา",
     age: "50",
-    sex: "ชาย",
-    alzheimer: "50%",
-    date: "01/01/2566",
-  },
-  {
-    name: "ติณณ์",
-    lastname: "โพธิกานนท์",
-    age: "60",
-    sex: "ชาย",
-    alzheimer: "50%",
-    date: "01/01/2566",
-  },
-  {
-    name: "ธัญญาดา",
-    lastname: "ทองใบ",
-    age: "55",
     sex: "หญิง",
     alzheimer: "50%",
-    date: "01/01/2566",
+    date: "07/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "สมชาย",
+    lastname: "สุวิกาโล",
+    age: "60",
+    sex: "ชาย",
+    alzheimer: "31%",
+    date: "06/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "ธัญญานก",
+    lastname: "ไสทอง",
+    age: "58",
+    sex: "หญิง",
+    alzheimer: "25%",
+    date: "05/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "ชยพล",
+    lastname: "ตาเจริญเมือง",
+    age: "47",
+    sex: "ชาย",
+    alzheimer: "6%",
+    date: "05/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
+    name: "กิตติพัทธ์",
+    lastname: "จิรฐา",
     age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    sex: "ชาย",
+    alzheimer: "18%",
+    date: "04/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "ญาณวุฒิ",
+    lastname: "นอนดี",
+    age: "69",
+    sex: "ชาย",
+    alzheimer: "12%",
+    date: "03/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "ธนีพร",
+    lastname: "อัมพร",
+    age: "53",
+    sex: "หญิง",
+    alzheimer: "29%",
+    date: "03/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
+    name: "ธำรง",
+    lastname: "ชัย",
     age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    sex: "ชาย",
+    alzheimer: "58%",
+    date: "01/03/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
+    name: "นรีรัตน์",
+    lastname: "รัตนเดชา",
+    age: "65",
+    sex: "หญิง",
     alzheimer: "50%",
-    date: "01/01/2566",
+    date: "28/02/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "นีรชา",
+    lastname: "ชาเขียว",
+    age: "63",
+    sex: "หญิง",
+    alzheimer: "31%",
+    date: "26/02/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "ปยุต",
+    lastname: "ชาอู่หลง",
+    age: "51",
+    sex: "ชาย",
+    alzheimer: "26%",
+    date: "26/02/2566",
   },
   {
-    name: "h",
-    lastname: "k",
-    age: "50",
-    sex: "male",
-    alzheimer: "50%",
-    date: "01/01/2566",
+    name: "พรรณิดา",
+    lastname: "พันบาท",
+    age: "48",
+    sex: "หญิง",
+    alzheimer: "9%",
+    date: "25/02/2566",
   },
 ];
 
@@ -140,52 +127,67 @@ function HomeDoc(props) {
       }}
     >
       <div className="row mb-4">
-        <div className="col-3">
-          <div className="widget mb-4">
-            <h4 className="text-light-blue">ผู้ใช้งานทั้งหมด</h4>
-            <div className="counter text-center">
-              <h1 style={{ fontWeight: "bold", fontSize: "50px" }}>10</h1>
-            </div>
-            <h6>(คน)</h6>
-          </div>
-
+        <div className="col-4">
           <div className="widget">
-            <h4 className="text-light-blue">เสี่ยงเป็นอัลไซเมอร์ทั้งหมด</h4>
-            <div className="counter text-center">
-              <h1 style={{ fontWeight: "bold", fontSize: "50px" }}>10</h1>
+            <div className="row" style={{ paddingLeft: "10px" }}>
+              {/* <div className="col-9"> */}
+              <h5 className="text-gray mb-4">ผู้ใช้งานทั้งหมด</h5>
+              <h1
+                style={{
+                  fontWeight: "bold",
+                  display: "inline",
+                  color: "#00b6a6",
+                  fontSize: "105px",
+                }}
+              >
+                12 คน
+              </h1>
+              {/* </div> */}
+              <div className="row wrapper">
+                <img src={user} style={{ width: "27%" }} />
+              </div>
             </div>
-            <h6>(คน)</h6>
           </div>
         </div>
         <div className="col-4">
           <div className="widget">
-            <h4 className="text-deep-blue">% อัลไซเมอร์ต่อผู้ใช้ทั้งหมด</h4>
-            <div
-              className="row mb-4"
-              style={{
-                paddingLeft: "89px",
-                paddingRight: "89px",
-                paddingTop: "15px",
-              }}
-            >
-              <CircularProgressbar value={30} text={"30%"} strokeWidth={10} />
+            <div className="row" style={{ paddingLeft: "10px" }}>
+              <h5 className="text-gray mb-4">เสี่ยงเป็นอัลไซเมอร์ทั้งหมด</h5>
+              <h1
+                style={{
+                  fontWeight: "bold",
+                  display: "inline",
+                  color: "#fe413d",
+                  fontSize: "105px",
+                }}
+              >
+                3 คน
+              </h1>
+
+              <div className="row wrapper">
+                <img src={userad} style={{ width: "27%" }} />
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-5">
-          <div className="widget">
-            <h4 className="text-black" style={{ paddingBottom: "14px" }}>
-              จำนวนผู้ป่วยอัลไซเมอร์ที่พบในแต่ละเดือน
-            </h4>
-            <div style={{ width: "100%" }}>
-              <BarChart />
+
+        <div className="col-4">
+          <div className="widget" style={{ paddingBottom: "5px" }}>
+            <div className="row mb-0">
+              <h5 className="text-gray">
+                จำนวนผู้ที่เสี่ยงเป็นโรคอัลไซเมอร์ในแต่ละเดือน
+              </h5>
             </div>
+            <div className="row">
+              <BarChartDoc />
+            </div>
+            <p className="text-center">เดือน</p>
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-12">
-          <div className="container-dash-sec mb-5">
+          <div className="container-dash-sec mb-1 text-b">
             <div className="row" style={{ marginBottom: "30px" }}>
               <h1>สถิติของผู้ใช้งานแต่ละคน</h1>
             </div>

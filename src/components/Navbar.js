@@ -29,6 +29,7 @@ function Navbar(props) {
   // const [id, setId] = useState("");
 
   useEffect(() => {
+    console.log(props.storageId);
     onAuthStateChanged(auth, (user) => {
       // console.log(id);
       if (!user) {
@@ -122,7 +123,7 @@ function Navbar(props) {
         />
         <Route path="alzheimer's" element={<Alzheimer />} />
         <Route path="aboutus" element={<Aboutus />} />
-        <Route path="result" element={<Result />} />
+        <Route path="result" element={<Result storageId={props.storageId} />} />
       </Routes>
     </div>
   );

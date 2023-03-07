@@ -733,7 +733,7 @@ webgazer.isReady = function () {
  */
 webgazer.pause = function () {
   paused = true;
-  gazeDot.remove();
+  // gazeDot.remove();
   return webgazer;
 };
 

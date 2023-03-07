@@ -1,7 +1,7 @@
 import ProgressBar from "react-bootstrap/ProgressBar";
+import Circle from "react-circle";
 import check from "./Picture/check.png";
 import checkleft from "./Picture/checkleft.png";
-import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import BarChart from "./BarChart";
 import { useEffect, useState, useRef } from "react";
@@ -77,28 +77,33 @@ function Records(props) {
         >
           <div className="col-6">
             <div className="widget">
-              <h4 className="text-deep-blue">
-                % ความเสี่ยงในการเป็นอัลไซเมอร์ล่าสุด
-              </h4>
+              <h4 className="text-b">% ความเสี่ยงในการเป็นอัลไซเมอร์ล่าสุด</h4>
               <div
                 className="row mb-4"
                 style={{
-                  paddingLeft: "150px",
-                  paddingRight: "150px",
+                  paddingLeft: "100px",
+                  paddingRight: "100px",
                   paddingTop: "17px",
                 }}
               >
-                <CircularProgressbar
-                  value={percent}
-                  text={`${percent}%`}
-                  strokeWidth={10}
+                <Circle
+                  progress={35}
+                  size={245}
+                  lineWidth={50}
+                  progressColor="cornflowerblue"
+                  textStyle={{
+                    font: "bold 5rem Anuphan",
+                  }}
+                  roundedStroke={true}
+                  showPercentage={true}
+                  showPercentageSymbol={true}
                 />
               </div>
             </div>
           </div>
           <div className="col-6">
             <div className="widget">
-              <h4 className="text-black" style={{ paddingBottom: "14px" }}>
+              <h4 className="text-b" style={{ paddingBottom: "14px" }}>
                 ผลการตรวจแต่ละเดือน
               </h4>
               <div style={{ width: "100%" }}>
@@ -116,7 +121,7 @@ function Records(props) {
           <h4 style={{ color: "#4953f5", marginBottom: "10px" }}>
             เปอร์เซ็นต์
           </h4>
-          <h1>การตรวจคัดกรองในปีนี้</h1>
+          <h1 className="text-b">การตรวจคัดกรองในปีนี้</h1>
         </div>
         <div
           className="row"
@@ -149,7 +154,7 @@ function Records(props) {
                   >
                     <div className="card-body text-center">
                       <div className="row mb-4">
-                        <h1>พ.ศ.2566</h1>
+                        <h1 className="text-b">พ.ศ.2566</h1>
                       </div>
                       <div className="row mb-5">
                         <div className="col-2 wrapper-center">
@@ -305,7 +310,7 @@ function Records(props) {
                   >
                     <div className="card-body text-center">
                       <div className="row mb-4">
-                        <h1>พ.ศ.2565</h1>
+                        <h1 className="text-b">พ.ศ.2565</h1>
                       </div>
                       <div className="row mb-5">
                         <div className="col-2 wrapper-center">

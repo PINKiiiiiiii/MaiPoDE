@@ -47,7 +47,10 @@ function App(props) {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<SignupUser setId={setId} />} />
-      <Route path="signedin/*" element={<Navbar id={id} />} />
+      <Route
+        path="signedin/*"
+        element={<Navbar id={id} storageId={storageId} />}
+      />
       <Route path="admin/*" element={<NavbarDoc />} />
       <Route path="/calibrate" element={<WebgazerCanvas />} />
       <Route

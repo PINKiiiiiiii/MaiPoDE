@@ -119,6 +119,7 @@ select {
 
 .widget {
   background-color: white;
+  margin: 0px;
   padding: 20px;
   border-radius: 10px;
   -webkit-box-shadow: 2px 4px 10px 1px rgb(0, 0, 0, 0.47);
@@ -155,7 +156,8 @@ select {
 
 .wrapper {
   display: flex;
-  align-items: flex-end;
+  align-items: end;
+  justify-content: end;
   left: 0;
   bottom: 0;
 }

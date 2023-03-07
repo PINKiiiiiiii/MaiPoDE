@@ -6262,6 +6262,11 @@ gzip-size@^6.0.0:
   dependencies:
     duplexer "^0.1.2"
 
+half-pie-chart@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/half-pie-chart/-/half-pie-chart-1.0.6.tgz#0b55ace8af5460fb3d2a99b3ef0cd4e484916357"
+  integrity sha512-7ZcfqVYsUjU4jcUJfjhG2vGOWZZXj/DZgvgar8H+r40JYgaPt9U10RvknSFPk9XRIWlosXIWQX4BDlKHqjoK9g==
+
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"
@@ -9388,6 +9393,11 @@ react-chartjs2@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-chartjs2/-/react-chartjs2-1.2.1.tgz#d7096108a35a745f19cb51dfbcc3320d3ee4dfad"
   integrity sha512-ir40NsVgJvd2y0LiN/E5k5/V7vzKAop5pqymKx6kVyOcVCwautUo2VjgSxAK14QGBgu8WhRmtr+YxutziWw7Og==
+
+react-circle@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-circle/-/react-circle-1.1.1.tgz#f97ccf3e2a37a91ea50280ea8262420e0d1de60c"
+  integrity sha512-iphQfy+MRuNuBqJyZlGKbxyBJhDszaiT5eTiilFFPuwo5nsW5k/uH0KCq/sXXBMiJpLJ/Ly3arkUDvrK62Zung==
 
 react-circular-progressbar@^2.1.0:
   version "2.1.0"

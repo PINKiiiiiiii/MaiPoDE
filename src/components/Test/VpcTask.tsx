@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import vpc from "./../Video/vpctask.mp4";
+import vpc from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import vpcAudio from "./../../PoDE/Audio/vpctask.mp3";
 import { doc, updateDoc } from "firebase/firestore";
@@ -36,9 +36,7 @@ const VpcTask: React.FC<any> = (props) => {
     webgazer.setGazeListener(gazeListener);
     webgazer.applyKalmanFilter(true);
     webgazer.showPredictionPoints(true);
-    webgazer.begin((): void => {
-      console.log("Start");
-    });
+    webgazer.resume();
   });
   const gazeListener = useCallback((data: any, clock: string): void => {
     // console.log(data);
@@ -87,8 +85,7 @@ const VpcTask: React.FC<any> = (props) => {
           });
         });
       });
-      webgazer.showPredictionPoints(false);
-      webgazer.pause();
+      // webgazer.showPredictionPoints(false);
       const btn = document.createElement("button");
       btn.innerHTML = "หน้าถัดไป";
       btn.setAttribute("class", "btn btn-info next-test-btn");

@@ -35,9 +35,7 @@ const Fixation: React.FC<any> = (props) => {
   useEffect(() => {
     webgazer.setGazeListener(gazeListener);
     webgazer.applyKalmanFilter(true);
-    webgazer.begin((): void => {
-      console.log("Start");
-    });
+    webgazer.resume();
   });
   const gazeListener = useCallback((data: any, clock: string): void => {
     // console.log(data);
@@ -105,7 +103,7 @@ const Fixation: React.FC<any> = (props) => {
         });
       });
       webgazer.pause();
-      webgazer.showPredictionPoints(false);
+      // webgazer.showPredictionPoints(false);
       const btn = document.createElement("button");
       btn.innerHTML = "หน้าถัดไป";
       btn.setAttribute("class", "btn btn-info next-test-btn");

@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import smoothpursuit from "./../Video/smoothpursuit.mp4";
+import smoothpursuit from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import smoothpursuitAudio from "./../../PoDE/Audio/smoothpursuit.mp3";
 import { doc, updateDoc } from "firebase/firestore";
@@ -36,9 +36,7 @@ const Smoothpursuit: React.FC<any> = (props) => {
     webgazer.setGazeListener(gazeListener);
     webgazer.applyKalmanFilter(true);
     webgazer.showPredictionPoints(true);
-    webgazer.begin((): void => {
-      console.log("Start");
-    });
+    webgazer.resume();
   });
   const gazeListener = useCallback((data: any, clock: string): void => {
     // console.log(data);
@@ -86,7 +84,7 @@ const Smoothpursuit: React.FC<any> = (props) => {
           });
         });
       });
-      webgazer.showPredictionPoints(false);
+      // webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
       btn.innerHTML = "หน้าถัดไป";

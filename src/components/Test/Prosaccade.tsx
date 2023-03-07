@@ -6,7 +6,7 @@ import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import prosaccade from "./../Video/prosaccade.mp4";
+import prosaccade from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import prosaccadeAudio from "./../../PoDE/Audio/prosaccade.mp3";
 import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
@@ -37,9 +37,7 @@ const Prosaccade: React.FC<any> = (props) => {
     webgazer.applyKalmanFilter(true);
     webgazer.showPredictionPoints(true);
     webgazer.setGazeListener(gazeListener);
-    webgazer.begin((): void => {
-      console.log("Start");
-    });
+    webgazer.resume();
   });
   const gazeListener = useCallback((data: any, clock: string): void => {
     // console.log(data);
@@ -81,13 +79,12 @@ const Prosaccade: React.FC<any> = (props) => {
       uploadString(storageRef, dl, "data_url").then((snapshot) => {
         getDownloadURL(storageRef).then((url) => {
           const docRef = doc(db, "Results", `${props.storageId}`);
-          console.log(docRef);
           updateDoc(docRef, {
             Prosaccade: url,
           });
         });
       });
-      webgazer.showPredictionPoints(false);
+      // webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
       btn.innerHTML = "หน้าถัดไป";
