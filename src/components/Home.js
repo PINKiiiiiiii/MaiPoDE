@@ -31,14 +31,14 @@ function Home(props) {
           <div
             className="caption"
             style={{
-              paddingTop: "300px",
-              paddingBottom: "70px",
+              paddingTop: "450px",
+              paddingBottom: "90px",
               paddingLeft: "100px",
               paddingRight: "100px",
             }}
           >
             <h1
-              className="text-b"
+              className="text-white"
               style={{
                 fontSize: "42px",
                 marginTop: "30px",
@@ -48,7 +48,7 @@ function Home(props) {
               แพลตฟอร์มช่วยตรวจหาโรคอัลไซเมอร์ในระยะเริ่มต้นด้วยตา
               โดยปัญญาประดิษฐ์
             </h1>
-            <h6 className="text-gray">
+            <h6 className="text-light-gray">
               PoDE (Platform of Assisting the Early Detection of Alzheimer's
               Disease with Eyes by AI)
             </h6>

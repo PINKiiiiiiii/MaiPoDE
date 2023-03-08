@@ -76,13 +76,20 @@ select {
   color: #10167b;
 }
 
+.text-light-blue {
+  color: #4953f5;
+}
 
 .text-gray {
-  color: #b8b8b8;
+  color: #8d8d8d;
+}
+
+.text-light-gray {
+  color: #dcdcdc;
 }
 
 .text-b {
-  color: #fefefe;
+  color: #424242;
 }
 
 .center {
