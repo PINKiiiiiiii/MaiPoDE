@@ -179,7 +179,15 @@ function HomeDoc(props) {
               </h5>
             </div>
             <div className="row">
-              <BarChartDoc />
+              <BarChartDoc
+                options={{
+                  defaults: {
+                    global: {
+                      defaultFontFamily: "Anuphan",
+                    },
+                  },
+                }}
+              />
             </div>
             <p className="text-center">เดือน</p>
           </div>

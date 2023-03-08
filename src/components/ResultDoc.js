@@ -293,10 +293,12 @@ function ResultDoc() {
       <div className="row">
         <div className="col-12">
           <div className="widget" style={{ padding: "50px" }}>
-            <h2 className="mb-4 text-b">สถิติการทำแบบทดสอบแต่ละครั้ง</h2>
+            <h2 className="mb-4 text-center">สถิติการทำแบบทดสอบแต่ละครั้ง</h2>
+            <h5 className="text-b">%ความคล้าย</h5>
             <div style={{ width: "100%" }}>
               <LineChart />
             </div>
+            <h5 className="text-center mt-2 mb-0">ครั้งที่</h5>
           </div>
         </div>
       </div>

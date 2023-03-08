@@ -8,6 +8,10 @@ import activity from "./Picture/activity.jpg";
 import time from "./Picture/7min.png";
 import sound from "./Picture/Sound.png";
 import good from "./Picture/Businessman.png";
+import Greensquare from "./Picture/Greensquare.png";
+import Greensquare2 from "./Picture/Greensquare2.png";
+import sit from "./Picture/sit.png";
+import sit2 from "./Picture/sit2.png";
 
 function Test(props) {
   useEffect(() => {
@@ -39,10 +43,14 @@ function Test(props) {
             className="container-result text-b text-center"
             style={{ marginRight: "2px", marginBottom: "2px" }}
           >
-            <img
-              src={medicine}
-              style={{ width: "100%", marginBottom: "20px" }}
-            />
+            <div className="row mb-4">
+              <div className="col-6">
+                <img src={sit} style={{ width: "100%" }} />
+              </div>
+              <div className="col-6">
+                <img src={sit2} style={{ width: "100%" }} />
+              </div>
+            </div>
             <h4>นั่งทำแบบทดสอบในท่าทางที่เหมาะสม</h4>
           </div>
         </div>
@@ -51,10 +59,15 @@ function Test(props) {
             className="container-result text-b text-center"
             style={{ marginLeft: "2px", marginBottom: "2px" }}
           >
-            <img
-              src={activity}
-              style={{ width: "100%", marginBottom: "20px" }}
-            />
+            <div className="row mb-4">
+              <div className="col-6">
+                <img src={Greensquare} style={{ width: "100%" }} />
+              </div>
+              <div className="col-6">
+                <img src={Greensquare2} style={{ width: "100%" }} />
+              </div>
+            </div>
+
             <h4>ตั้งกล้องให้เห็นใบหน้าชัดเจนตลอดเวลา</h4>
           </div>
         </div>

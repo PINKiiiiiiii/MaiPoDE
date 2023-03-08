@@ -19,6 +19,26 @@ const LineChart = () => {
             },
           ],
         }}
+        options={{
+          scales: {
+            x: {
+              ticks: {
+                font: {
+                  size: 20,
+                  family: "Anuphan",
+                },
+              },
+            },
+            y: {
+              ticks: {
+                font: {
+                  size: 20,
+                  family: "Anuphan",
+                },
+              },
+            },
+          },
+        }}
       />
     </div>
   );

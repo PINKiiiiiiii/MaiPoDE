@@ -107,7 +107,16 @@ function Records(props) {
                 ผลการตรวจแต่ละเดือน
               </h4>
               <div style={{ width: "100%" }}>
-                <BarChart />
+                <BarChart
+                  options={{
+                    defaults: {
+                      global: {
+                        defaultFontFamily: "Anuphan",
+                        defaultSize: "50px",
+                      },
+                    },
+                  }}
+                />
               </div>
             </div>
           </div>

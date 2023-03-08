@@ -8,7 +8,7 @@ const BarChart = () => {
     <div>
       <Bar
         data={{
-          labels: ["ม.ค", "ก.พ.", "มี.ค", "เม.ย."],
+          labels: ["ม.ค.", "ก.พ.", "มี.ค", "เม.ย."],
           datasets: [
             {
               label: "Alzheimer's",
@@ -28,6 +28,26 @@ const BarChart = () => {
               borderWidth: 1,
             },
           ],
+        }}
+        options={{
+          scales: {
+            x: {
+              ticks: {
+                font: {
+                  size: 20,
+                  family: "Anuphan",
+                },
+              },
+            },
+            y: {
+              ticks: {
+                font: {
+                  size: 20,
+                  family: "Anuphan",
+                },
+              },
+            },
+          },
         }}
       />
     </div>

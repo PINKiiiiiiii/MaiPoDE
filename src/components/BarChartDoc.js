@@ -19,7 +19,26 @@ const BarChart = () => {
             },
           ],
         }}
-        options={{}}
+        options={{
+          scales: {
+            x: {
+              ticks: {
+                font: {
+                  size: 15,
+                  family: "Anuphan",
+                },
+              },
+            },
+            y: {
+              ticks: {
+                font: {
+                  size: 15,
+                  family: "Anuphan",
+                },
+              },
+            },
+          },
+        }}
       />
     </div>
   );
