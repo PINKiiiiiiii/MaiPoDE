@@ -213,9 +213,19 @@ code {
     monospace;
 }
 
-.video-background {
+.video-container {
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   object-fit: cover;
-  top: 0;
-  left: 0;
-  position: fixed;
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .caption {
+  z-index: 1;
+  position: relative;
 }

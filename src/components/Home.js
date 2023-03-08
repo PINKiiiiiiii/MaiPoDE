@@ -24,53 +24,44 @@ function Home(props) {
   return (
     <div className="container-fluid" style={{ padding: "0em" }}>
       <div className="row">
-        <div className="col-12">
+        <div className="video-container">
+          {/* <div className="video-background"> */}
+          <video autoPlay loop muted src={hero} style={{ width: "100%" }} />
+          {/* </div> */}
           <div
-            className="container"
+            className="caption"
             style={{
-              paddingTop: "150px",
-              paddingBottom: "120px",
+              paddingTop: "220px",
+              paddingBottom: "220px",
               paddingLeft: "100px",
-              paddingRight: "50px",
+              paddingRight: "100px",
             }}
           >
-            <div className="video-background">
-              <video autoPlay loop muted src={hero} style={{ width: "100%" }} />
-            </div>
-            <div
-              className="container"
-              // style={{
-              //   paddingTop: "150px",
-              //   paddingBottom: "120px",
-              //   paddingLeft: "100px",
-              //   paddingRight: "100px",
-              // }}
+            <h4 className="text-light-blue">ยินดีต้อนรับ</h4>
+            <h1
+              className="text-b"
+              style={{
+                fontSize: "42px",
+                marginTop: "30px",
+                marginBottom: "30px",
+              }}
             >
-              <h4 className="text-light-blue">ยินดีต้อนรับ</h4>
-              <h1
-                className="text-b"
-                style={{
-                  fontSize: "42px",
-                  marginTop: "30px",
-                  marginBottom: "30px",
-                }}
-              >
-                แพลตฟอร์มช่วยตรวจหาโรคอัลไซเมอร์ในระยะเริ่มต้นด้วยตา
-                โดยปัญญาประดิษฐ์
-              </h1>
-              <h6 className="text-gray">
-                PoDE (Platform of Assisting the Early Detection of Alzheimer's
-                Disease with Eyes by AI)
-              </h6>
-              <br />
-              <button
-                type="button"
-                className="btn btn-blue btn-lg"
-                onClick={handleClickTest}
-              >
-                <h2>เริ่มทดสอบ</h2>
-              </button>
-              {/* <div className="container" style={{ marginTop: "10vh" }}>
+              แพลตฟอร์มช่วยตรวจหาโรคอัลไซเมอร์ในระยะเริ่มต้นด้วยตา
+              โดยปัญญาประดิษฐ์
+            </h1>
+            <h6 className="text-gray">
+              PoDE (Platform of Assisting the Early Detection of Alzheimer's
+              Disease with Eyes by AI)
+            </h6>
+            <br />
+            <button
+              type="button"
+              className="btn btn-blue btn-lg"
+              onClick={handleClickTest}
+            >
+              <h2>เริ่มทดสอบ</h2>
+            </button>
+            {/* <div className="container" style={{ marginTop: "10vh" }}>
                 <div className="row">
                   <div className="col col-lg-3">
                     <h1>10</h1>
@@ -82,54 +73,56 @@ function Home(props) {
                   </div>
                 </div>
               </div> */}
-            </div>
           </div>
         </div>
-        {/* <div className="col-5 wrapper" style={{ backgroundColor: "#d1f7e5" }}>
+      </div>
+
+      {/* <div className="col-5 wrapper" style={{ backgroundColor: "#d1f7e5" }}>
           <img src={Pic1} style={{ width: "100%" }} />
         </div> */}
-      </div>
-      <div
-        className="container-fluid"
-        style={{
-          backgroundColor: "#10167b",
-          paddingLeft: "15vh",
-          paddingRight: "15vh",
-          paddingTop: "8vh",
-          paddingBottom: "8vh",
-        }}
-      >
-        <div className="row mx-0">
-          <div className="col-4">
-            <div className="row">
-              <div className="col-2">
-                <img src={easy} style={{ width: "100%" }} />
-              </div>
-              <div className="col-10 text-white">
-                <h2>ใช้งานง่าย</h2>
-                <p>ตรวจโรคอัลไซเมอร์ได้จากทุกที่ ทุกเวลา</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="row">
-              <div className="col-2">
-                <img src={fast} style={{ width: "100%" }} />
-              </div>
-              <div className="col-10 text-white">
-                <h2>รวดเร็ว</h2>
-                <p>ใช้เวลาเพียง 5-7 นาที ก็รู้ผลตรวจได้ทันที</p>
+      <div className="row">
+        <div
+          className="container"
+          style={{
+            backgroundColor: "#10167b",
+            paddingLeft: "15vh",
+            paddingRight: "15vh",
+            paddingTop: "8vh",
+            paddingBottom: "8vh",
+          }}
+        >
+          <div className="row mx-0">
+            <div className="col-4">
+              <div className="row">
+                <div className="col-2">
+                  <img src={easy} style={{ width: "100%" }} />
+                </div>
+                <div className="col-10 text-white">
+                  <h2>ใช้งานง่าย</h2>
+                  <p>ตรวจโรคอัลไซเมอร์ได้จากทุกที่ ทุกเวลา</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-4">
-            <div className="row">
-              <div className="col-2">
-                <img src={quality} style={{ width: "100%" }} />
+            <div className="col-4">
+              <div className="row">
+                <div className="col-2">
+                  <img src={fast} style={{ width: "100%" }} />
+                </div>
+                <div className="col-10 text-white">
+                  <h2>รวดเร็ว</h2>
+                  <p>ใช้เวลาเพียง 5-7 นาที ก็รู้ผลตรวจได้ทันที</p>
+                </div>
               </div>
-              <div className="col-10 text-white">
-                <h2>มีประสิทธิภาพ</h2>
-                <p>ใช้ปัญญาประดิษฐ์วิเคราะห์โอกาสการเป็นอัลไซเมอร์</p>
+            </div>
+            <div className="col-4">
+              <div className="row">
+                <div className="col-2">
+                  <img src={quality} style={{ width: "100%" }} />
+                </div>
+                <div className="col-10 text-white">
+                  <h2>มีประสิทธิภาพ</h2>
+                  <p>ใช้ปัญญาประดิษฐ์วิเคราะห์โอกาสการเป็นอัลไซเมอร์</p>
+                </div>
               </div>
             </div>
           </div>
