@@ -212,3 +212,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.video-background {
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  position: fixed;
+}

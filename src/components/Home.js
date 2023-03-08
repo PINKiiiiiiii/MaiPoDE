@@ -10,6 +10,7 @@ import test from "./Picture/test.png";
 import result from "./Picture/result.png";
 import happiness from "./Picture/happiness.jpg";
 import Pic1 from "./Picture/Pic1.png";
+import hero from "./Video/hero.mp4";
 
 function Home(props) {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function Home(props) {
   return (
     <div className="container-fluid" style={{ padding: "0em" }}>
       <div className="row">
-        <div className="col-7">
+        <div className="col-12">
           <div
             className="container"
             style={{
@@ -33,6 +34,9 @@ function Home(props) {
               paddingRight: "50px",
             }}
           >
+            <div className="video-background">
+              <video autoPlay loop muted src={hero} style={{ width: "100%" }} />
+            </div>
             <div
               className="container"
               // style={{
@@ -81,9 +85,9 @@ function Home(props) {
             </div>
           </div>
         </div>
-        <div className="col-5 wrapper" style={{ backgroundColor: "#d1f7e5" }}>
+        {/* <div className="col-5 wrapper" style={{ backgroundColor: "#d1f7e5" }}>
           <img src={Pic1} style={{ width: "100%" }} />
-        </div>
+        </div> */}
       </div>
       <div
         className="container-fluid"
