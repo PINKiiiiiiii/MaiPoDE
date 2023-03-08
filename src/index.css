@@ -76,16 +76,13 @@ select {
   color: #10167b;
 }
 
-.text-light-blue {
-  color: #4953f5;
-}
 
 .text-gray {
-  color: #8d8d8d;
+  color: #b8b8b8;
 }
 
 .text-b {
-  color: #424242;
+  color: #fefefe;
 }
 
 .center {
@@ -222,6 +219,7 @@ code {
   height: 100%;
   position: absolute;
   object-fit: cover;
+  filter: brightness(50%);
 }
 
 /* Just styling the content of the div, the *magic* in the previous rules */

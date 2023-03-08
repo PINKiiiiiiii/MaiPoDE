@@ -31,13 +31,12 @@ function Home(props) {
           <div
             className="caption"
             style={{
-              paddingTop: "220px",
-              paddingBottom: "220px",
+              paddingTop: "300px",
+              paddingBottom: "70px",
               paddingLeft: "100px",
               paddingRight: "100px",
             }}
           >
-            <h4 className="text-light-blue">ยินดีต้อนรับ</h4>
             <h1
               className="text-b"
               style={{
