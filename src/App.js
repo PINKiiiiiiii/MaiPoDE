@@ -52,10 +52,13 @@ function App(props) {
         element={<Navbar id={id} storageId={storageId} />}
       />
       <Route path="admin/*" element={<NavbarDoc />} />
-      <Route path="/calibrate" element={<WebgazerCanvas />} />
+      <Route
+        path="/calibrate"
+        element={<WebgazerCanvas id={id} setStorageId={setStorageId} />}
+      />
       <Route
         path="/fixation"
-        element={<Fixation id={id} setStorageId={setStorageId} />}
+        element={<Fixation id={id} storageId={storageId} />}
       />
       <Route
         path="/prosaccade"

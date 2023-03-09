@@ -9,7 +9,7 @@ import "./../../PoDE/css/video.css";
 import fixation from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import fixationAudio from "./../../PoDE/Audio/Fixation.mp3";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import {
   getStorage,
@@ -66,7 +66,6 @@ const Fixation: React.FC<any> = (props) => {
           return fields.join(",");
         })
         .join("\n");
-
       const dl: string = `data:text/csv,${csv}`;
       const storage = getStorage();
       const storageRef = ref(
@@ -77,31 +76,13 @@ const Fixation: React.FC<any> = (props) => {
       // 'file' comes from the Blob or File API
       uploadString(storageRef, dl, "data_url").then((snapshot) => {
         getDownloadURL(storageRef).then((url) => {
-          addDoc(collection(db, "Results"), {
-            User: props.id,
-            Time: new Date(),
+          const docRef = doc(db, "Results", `${props.storageId}`);
+          updateDoc(docRef, {
             Fixation: url,
-            Finish: false,
-          })
-            .then((docRef) => {
-              props.setStorageId(docRef.id);
-            })
-            .catch((error) => console.error("Error adding document: ", error));
-
-          // const getId = async () => {
-          //   const q = query(
-          //     collection(db, "Results"),
-          //     where("Fixation", "==", url)
-          //   );
-          //   const querySnapshot = await getDocs(q);
-          //   querySnapshot.forEach((doc) => {
-
-          //     console.log(doc.id);
-          //   });
-          // };
-          // getId();
+          });
         });
       });
+      // webgazer.showPredictionPoints(false);
       webgazer.pause();
       // webgazer.showPredictionPoints(false);
       const btn = document.createElement("button");

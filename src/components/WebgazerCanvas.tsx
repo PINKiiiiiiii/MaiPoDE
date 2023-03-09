@@ -7,6 +7,14 @@ import webgazer from "./../Scripts/Webgazer/index";
 import nj from "numjs";
 import reload from "./Picture/reload.png";
 import play from "./Picture/play.png";
+import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import db from "./firebase/firebaseConfig";
+import {
+  getStorage,
+  ref,
+  uploadString,
+  getDownloadURL,
+} from "firebase/storage";
 
 import exampleVideoSrc from "./Video/Example.mp4";
 
@@ -84,7 +92,7 @@ const theme = createTheme({
   },
 });
 
-const WebgazerCanvas: React.FC<{}> = () => {
+const WebgazerCanvas: React.FC<any> = (props) => {
   // const testCanvasRef = useRef<HTMLCanvasElement>(null);
   // const testCanvasData = useRef<ICanvasData | null>(null);
   // const [testCanvasToggle, setTestCanvasToggle] = useState<boolean>(false);
@@ -201,14 +209,42 @@ const WebgazerCanvas: React.FC<{}> = () => {
   };
   const nextPage = (): void => {
     navigate("/fixation");
-    webgazer.pause();
   };
   const handleFiveSec = (): void => {
-    setShowHelpModal(false);
+    isFinish(false);
     hideCalibPoints(false);
     showCalibAt(4, true);
     sleep(5000).then(() => {
       setGoNextPage(true);
+      const csv: string = arr.current
+        .map((fields: string[]): string => {
+          return fields.join(",");
+        })
+        .join("\n");
+
+      const dl: string = `data:text/csv,${csv}`;
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        `${props.id + " calibrate " + Date() + ".csv"}`
+      );
+
+      // 'file' comes from the Blob or File API
+      uploadString(storageRef, dl, "data_url").then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+          addDoc(collection(db, "Results"), {
+            User: props.id,
+            Time: new Date(),
+            Calibrate: url,
+            Finish: false,
+          })
+            .then((docRef) => {
+              props.setStorageId(docRef.id);
+            })
+            .catch((error) => console.error("Error adding document: ", error));
+        });
+      });
+      webgazer.pause();
     });
   };
   const gazeListener = useCallback((data: any, clock: string): void => {
@@ -306,17 +342,7 @@ const WebgazerCanvas: React.FC<{}> = () => {
       isFinish(true);
     }
   }, [clickedBtn, showCalibAt, clearCanvas, isFinish]);
-  useEffect((): void => {
-    if (clickedBtn === 8) {
-      showCalibAt(4, true);
-    } else if (clickedBtn === 9) {
-      hideCalibPoints(false);
-      showCalibAt(4, true);
-      sleep(5000).then(() => {
-        isFinish(true);
-      });
-    }
-  }, [clickedBtn, showCalibAt, clearCanvas, isFinish]);
+
   // useEffect((): void => {
   //   if (finish) {
   //     const csv: string = arr.current
@@ -418,7 +444,7 @@ const WebgazerCanvas: React.FC<{}> = () => {
         </Modal>
         <Modal
           show={finish}
-          onHide={handleCloseModal}
+          onHide={handleFiveSec}
           backdrop="static"
           keyboard={DEBUG}
         >
@@ -450,7 +476,7 @@ const WebgazerCanvas: React.FC<{}> = () => {
         </Modal>
         <Modal
           show={goNextPage}
-          onHide={handleCloseModal}
+          onHide={nextPage}
           backdrop="static"
           keyboard={DEBUG}
         >

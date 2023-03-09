@@ -9,7 +9,7 @@ import "./../../PoDE/css/video.css";
 import prosaccade from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import prosaccadeAudio from "./../../PoDE/Audio/prosaccade.mp3";
-import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import {
   getStorage,
