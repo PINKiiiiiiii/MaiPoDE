@@ -12,7 +12,7 @@ const BarChart = () => {
           datasets: [
             {
               label: "Alzheimer's",
-              data: [1, 2, 3, 4],
+              data: [19, 21, 23, 25],
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(255, 159, 64, 0.2)",

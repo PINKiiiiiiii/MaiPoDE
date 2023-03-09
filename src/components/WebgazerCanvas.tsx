@@ -73,11 +73,11 @@ const arrHead: string[] = [
   "right-y",
 ];
 
-// const sleep = (time: number): Promise<void> => {
-//   return new Promise((resolve: (value: void) => void): void => {
-//     setTimeout(resolve, time);
-//   });
-// };
+const sleep = (time: number): Promise<void> => {
+  return new Promise((resolve: (value: void) => void): void => {
+    setTimeout(resolve, time);
+  });
+};
 const theme = createTheme({
   typography: {
     fontFamily: "Anuphan",
@@ -105,6 +105,7 @@ const WebgazerCanvas: React.FC<{}> = () => {
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
   const [clickedBtn, setClickedBtn] = useState<number>(0);
   const [finish, isFinish] = useState<boolean>(false);
+  const [goNextPage, setGoNextPage] = useState<boolean>(false);
 
   const updateBtnAt = useCallback((idx: number, toggle: boolean): void => {
     const curP: IBtnProps = btnProps.current[idx];
@@ -202,6 +203,14 @@ const WebgazerCanvas: React.FC<{}> = () => {
     navigate("/fixation");
     webgazer.pause();
   };
+  const handleFiveSec = (): void => {
+    setShowHelpModal(false);
+    hideCalibPoints(false);
+    showCalibAt(4, true);
+    sleep(5000).then(() => {
+      setGoNextPage(true);
+    });
+  };
   const gazeListener = useCallback((data: any, clock: string): void => {
     // console.log(data);
     if (data) {
@@ -297,7 +306,17 @@ const WebgazerCanvas: React.FC<{}> = () => {
       isFinish(true);
     }
   }, [clickedBtn, showCalibAt, clearCanvas, isFinish]);
-
+  useEffect((): void => {
+    if (clickedBtn === 8) {
+      showCalibAt(4, true);
+    } else if (clickedBtn === 9) {
+      hideCalibPoints(false);
+      showCalibAt(4, true);
+      sleep(5000).then(() => {
+        isFinish(true);
+      });
+    }
+  }, [clickedBtn, showCalibAt, clearCanvas, isFinish]);
   // useEffect((): void => {
   //   if (finish) {
   //     const csv: string = arr.current
@@ -399,6 +418,38 @@ const WebgazerCanvas: React.FC<{}> = () => {
         </Modal>
         <Modal
           show={finish}
+          onHide={handleCloseModal}
+          backdrop="static"
+          keyboard={DEBUG}
+        >
+          <Modal.Header closeButton={false}>
+            <Modal.Title>
+              <Typography variant="h6">เข้าสู่การทำแบบทดสอบ</Typography>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="row mt-0">
+              <div className="col-12">
+                <Typography>
+                  มีทั้งหมด 5 แบบทดสอบ
+                  กรุณาเลื่อนหน้าของท่านให้อยู่ในกรอบสีเขียวตลอดเวลา
+                  และเปิดเสียงเพื่อฟังคำแนะนำ
+                </Typography>
+              </div>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <button
+              className="btn btn-primary"
+              data-dismiss="modal"
+              onClick={handleFiveSec}
+            >
+              <Typography variant="subtitle1">เริ่มทดสอบ</Typography>
+            </button>
+          </Modal.Footer>
+        </Modal>
+        <Modal
+          show={goNextPage}
           onHide={handleCloseModal}
           backdrop="static"
           keyboard={DEBUG}

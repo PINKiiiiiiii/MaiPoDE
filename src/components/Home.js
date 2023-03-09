@@ -31,8 +31,8 @@ function Home(props) {
           <div
             className="caption"
             style={{
-              paddingTop: "450px",
-              paddingBottom: "90px",
+              paddingTop: "380px",
+              paddingBottom: "70px",
               paddingLeft: "100px",
               paddingRight: "100px",
             }}

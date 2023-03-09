@@ -58,10 +58,11 @@ function Result(props) {
               }}
             >
               <Circle
-                progress={35}
+                progress={25}
                 size={343}
                 lineWidth={50}
-                progressColor="#00cdd0"
+                progressColor="#0daa00"
+                textColor="#0daa00"
                 textStyle={{
                   font: "bold 5rem Anuphan",
                 }}
@@ -92,11 +93,14 @@ function Result(props) {
           <div className="col-3">
             <h3>คล้ายเสียงปกติ</h3>
           </div>
-          <div className="col-4">
-            <img src={Green} style={{ width: "70%" }} />
+          <div className="col-3">
+            <img src={Green} style={{ width: "90%" }} />
           </div>
-          <div className="col-5 text-gray">
-            <h4>คล้ายเสียงปกติ</h4>
+          <div className="col-6">
+            <h4 style={{ color: "#0daa00" }}>
+              คุณไม่มีความเสี่ยงในการเป็นโรคอัลไซเมอร์
+              แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
+            </h4>
           </div>
         </div>
 
@@ -104,33 +108,42 @@ function Result(props) {
           <div className="col-3">
             <h3>คล้ายคลึงต่ำ</h3>
           </div>
-          <div className="col-4">
-            <img src={Yellow} style={{ width: "70%" }} />
+          <div className="col-3">
+            <img src={Yellow} style={{ width: "90%" }} />
           </div>
-          <div className="col-5 text-gray">
-            <h4>คล้ายเสียงปกติ</h4>
+          <div className="col-6">
+            <h4 style={{ color: "#f9b209" }}>
+              คุณมีความเสี่ยงเล็กน้อยในการเป็นโรคอัลไซเมอร์
+              แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
+            </h4>
           </div>
         </div>
         <div className="row mb-3 wrapper-center">
           <div className="col-3">
             <h3>คล้ายคลึงปานกลาง</h3>
           </div>
-          <div className="col-4">
-            <img src={Orange} style={{ width: "70%" }} />
+          <div className="col-3">
+            <img src={Orange} style={{ width: "90%" }} />
           </div>
-          <div className="col-5 text-gray">
-            <h4>คล้ายเสียงปกติ</h4>
+          <div className="col-6">
+            <h4 style={{ color: "#ff8f2f" }}>
+              โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายค่อนข้างสูง
+              หากได้ผลดังเดิม ควรไปตรวจที่โรงพยาบาล เพื่อให้ได้ผลที่ชัดเจนขึ้น
+            </h4>
           </div>
         </div>
         <div className="row mb-5 wrapper-center">
           <div className="col-3">
             <h3>คล้ายคลึงสูง</h3>
           </div>
-          <div className="col-4">
-            <img src={Red} style={{ width: "70%" }} />
+          <div className="col-3">
+            <img src={Red} style={{ width: "90%" }} />
           </div>
-          <div className="col-5 text-gray">
-            <h4>คล้ายเสียงปกติ</h4>
+          <div className="col-6">
+            <h4 style={{ color: "#d93000" }}>
+              โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายสูง หากได้ผลดังเดิม
+              ควรไปตรวจที่โรงพยาบาลโดยด่วน เพื่อให้ได้ผลที่ชัดเจนขึ้น
+            </h4>
           </div>
         </div>
         <h3 className="text-gray">
@@ -159,7 +172,7 @@ function Result(props) {
             <h5 className="text-b">การจ้องจุด</h5>
             <div className="row">
               <Circle
-                progress={35}
+                progress={53}
                 size={300}
                 lineWidth={50}
                 progressColor="#00cdd0"
@@ -179,7 +192,7 @@ function Result(props) {
             <h5 className="text-b">การมองตามจุด</h5>
             <div className="row">
               <Circle
-                progress={35}
+                progress={60}
                 size={300}
                 lineWidth={50}
                 progressColor="#00cdd0"
@@ -198,7 +211,7 @@ function Result(props) {
             <h5 className="text-b">การมองหลีกเลี่ยงจุด</h5>
             <div className="row">
               <Circle
-                progress={35}
+                progress={70}
                 size={300}
                 lineWidth={50}
                 progressColor="#00cdd0"
@@ -217,7 +230,7 @@ function Result(props) {
             <h5 className="text-b">การมองตามจุดเคลื่อนที่</h5>
             <div className="row">
               <Circle
-                progress={35}
+                progress={72}
                 size={300}
                 lineWidth={50}
                 progressColor="#00cdd0"
@@ -236,7 +249,7 @@ function Result(props) {
             <h5 className="text-b">การแยกแยะภาพ</h5>
             <div className="row">
               <Circle
-                progress={35}
+                progress={81}
                 size={300}
                 lineWidth={50}
                 progressColor="#00cdd0"
