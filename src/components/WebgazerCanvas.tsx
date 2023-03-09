@@ -450,16 +450,15 @@ const WebgazerCanvas: React.FC<any> = (props) => {
         >
           <Modal.Header closeButton={false}>
             <Modal.Title>
-              <Typography variant="h6">เข้าสู่การทำแบบทดสอบ</Typography>
+              <Typography variant="h6">เริ่มทำการทดสอบความแม่นยำ</Typography>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="row mt-0">
               <div className="col-12">
                 <Typography>
-                  มีทั้งหมด 5 แบบทดสอบ
-                  กรุณาเลื่อนหน้าของท่านให้อยู่ในกรอบสีเขียวตลอดเวลา
-                  และเปิดเสียงเพื่อฟังคำแนะนำ
+                  มองจุดสีเขียวตรงกลางหน้าจอเป็นเวลา 5 วินาที
+                  เพื่อทดสอบประสิทธิภาพการทำงานของการติดตามการเคลื่อนที่ของดวงตา
                 </Typography>
               </div>
             </div>
