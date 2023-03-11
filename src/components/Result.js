@@ -161,7 +161,7 @@ function Result(props) {
       </div>
       <div className="row text-center mb-4">
         <h4 style={{ color: "#4953f5", marginBottom: "10px" }}>ผลการทดสอบ</h4>
-        <h1 className="text-b">ความสามารถในการมองแต่ละด้าน</h1>
+        <h1 className="text-b">ความคล้ายโรคอัลไซเมอร์ในการมองแต่ละด้าน</h1>
       </div>
       <div
         className="row mb-5"
