@@ -59,7 +59,7 @@ function Result(props) {
             >
               <Circle
                 progress={25}
-                size={343}
+                size={300}
                 lineWidth={50}
                 progressColor="#0daa00"
                 textColor="#0daa00"
@@ -71,11 +71,14 @@ function Result(props) {
                 showPercentageSymbol={true}
               />
             </div>
+            <div className="row mb-4" style={{ font: "bold 5rem Anuphan" }}>
+              <button className="btn btn-danger">ติดต่อแพทย์</button>
+            </div>
           </div>
         </div>
         <div className="col-7">
           <div className="widget">
-            <h2 className="text-b" style={{ paddingBottom: "14px" }}>
+            <h2 className="text-b" style={{}}>
               ผลการตรวจครั้งล่าสุด
             </h2>
             <div style={{ width: "100%" }}>

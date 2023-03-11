@@ -208,7 +208,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
     setShowHelpModal(true);
   };
   const nextPage = (): void => {
-    navigate("/fixation");
+    navigate("/Fixation");
   };
   const handleFiveSec = (): void => {
     isFinish(false);
@@ -442,7 +442,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
             </button>
           </Modal.Footer>
         </Modal>
-        <Modal
+        {/* <Modal
           show={finish}
           onHide={handleFiveSec}
           backdrop="static"
@@ -471,10 +471,10 @@ const WebgazerCanvas: React.FC<any> = (props) => {
             >
               <Typography variant="subtitle1">เริ่มทดสอบ</Typography>
             </button>
-          </Modal.Footer>
-        </Modal>
+          </Modal.Footer> */}
+        {/* </Modal> */}
         <Modal
-          show={goNextPage}
+          show={finish}
           onHide={nextPage}
           backdrop="static"
           keyboard={DEBUG}
