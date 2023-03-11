@@ -87,10 +87,11 @@ function Records(props) {
                 }}
               >
                 <Circle
-                  progress={35}
+                  progress={75}
                   size={245}
                   lineWidth={50}
-                  progressColor="cornflowerblue"
+                  progressColor="#ff8f2f"
+                  textColor="#ff8f2f"
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
