@@ -87,7 +87,7 @@ function Result(props) {
                 }}
               >
                 <Circle
-                  progress={all.toFixed(2)}
+                  progress={all.toFixed(1)}
                   size={270}
                   lineWidth={50}
                   progressColor="#ff8f2f"
@@ -202,7 +202,7 @@ function Result(props) {
               <h5 className="text-b">การจ้องจุด</h5>
               <div className="row">
                 <Circle
-                  progress={fixation.toFixed(2)}
+                  progress={fixation.toFixed(1)}
                   size={300}
                   lineWidth={50}
                   progressColor="#00cdd0"
@@ -222,7 +222,7 @@ function Result(props) {
               <h5 className="text-b">การมองตามจุด</h5>
               <div className="row">
                 <Circle
-                  progress={prosaccade.toFixed(2)}
+                  progress={prosaccade.toFixed(1)}
                   size={300}
                   lineWidth={50}
                   progressColor="#00cdd0"
@@ -241,7 +241,7 @@ function Result(props) {
               <h5 className="text-b">การมองหลีกเลี่ยงจุด</h5>
               <div className="row">
                 <Circle
-                  progress={antisaccade.toFixed(2)}
+                  progress={antisaccade.toFixed(1)}
                   size={300}
                   lineWidth={50}
                   progressColor="#00cdd0"
@@ -260,7 +260,7 @@ function Result(props) {
               <h5 className="text-b">การมองตามจุดเคลื่อนที่</h5>
               <div className="row">
                 <Circle
-                  progress={smooth.toFixed(2)}
+                  progress={smooth.toFixed(1)}
                   size={300}
                   lineWidth={50}
                   progressColor="#00cdd0"
@@ -279,7 +279,7 @@ function Result(props) {
               <h5 className="text-b">การแยกแยะภาพ</h5>
               <div className="row">
                 <Circle
-                  progress={vpc.toFixed(2)}
+                  progress={vpc.toFixed(1)}
                   size={300}
                   lineWidth={50}
                   progressColor="#00cdd0"
