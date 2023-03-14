@@ -49,7 +49,7 @@ function Result(props) {
       .then((response) => {
         // handle success
         setAll(response.data.PredictionAll * 100);
-        setCalibrate(response.data.PredictionParts[0]);
+        console.log(response.data.PredictionParts[0] * 100);
         setFixation(response.data.PredictionParts[1] * 100);
         setProsaccade(response.data.PredictionParts[2] * 100);
         setAntisaccade(response.data.PredictionParts[3] * 100);
@@ -90,8 +90,24 @@ function Result(props) {
                   progress={all.toFixed(1)}
                   size={270}
                   lineWidth={50}
-                  progressColor="#ff8f2f"
-                  textColor="#ff8f2f"
+                  progressColor={
+                    all >= 75
+                      ? "#d93000"
+                      : all >= 50
+                      ? "#ff8f2f"
+                      : all >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    all >= 75
+                      ? "#d93000"
+                      : all >= 50
+                      ? "#ff8f2f"
+                      : all >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
@@ -205,7 +221,24 @@ function Result(props) {
                   progress={fixation.toFixed(1)}
                   size={300}
                   lineWidth={50}
-                  progressColor="#00cdd0"
+                  progressColor={
+                    fixation >= 75
+                      ? "#d93000"
+                      : fixation >= 50
+                      ? "#ff8f2f"
+                      : fixation >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    fixation >= 75
+                      ? "#d93000"
+                      : fixation >= 50
+                      ? "#ff8f2f"
+                      : fixation >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
@@ -225,7 +258,24 @@ function Result(props) {
                   progress={prosaccade.toFixed(1)}
                   size={300}
                   lineWidth={50}
-                  progressColor="#00cdd0"
+                  progressColor={
+                    prosaccade >= 75
+                      ? "#d93000"
+                      : prosaccade >= 50
+                      ? "#ff8f2f"
+                      : prosaccade >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    prosaccade >= 75
+                      ? "#d93000"
+                      : prosaccade >= 50
+                      ? "#ff8f2f"
+                      : prosaccade >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
@@ -244,7 +294,24 @@ function Result(props) {
                   progress={antisaccade.toFixed(1)}
                   size={300}
                   lineWidth={50}
-                  progressColor="#00cdd0"
+                  progressColor={
+                    antisaccade >= 75
+                      ? "#d93000"
+                      : antisaccade >= 50
+                      ? "#ff8f2f"
+                      : antisaccade >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    antisaccade >= 75
+                      ? "#d93000"
+                      : antisaccade >= 50
+                      ? "#ff8f2f"
+                      : antisaccade >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
@@ -263,7 +330,24 @@ function Result(props) {
                   progress={smooth.toFixed(1)}
                   size={300}
                   lineWidth={50}
-                  progressColor="#00cdd0"
+                  progressColor={
+                    smooth >= 75
+                      ? "#d93000"
+                      : smooth >= 50
+                      ? "#ff8f2f"
+                      : smooth >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    smooth >= 75
+                      ? "#d93000"
+                      : smooth >= 50
+                      ? "#ff8f2f"
+                      : smooth >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
@@ -282,7 +366,24 @@ function Result(props) {
                   progress={vpc.toFixed(1)}
                   size={300}
                   lineWidth={50}
-                  progressColor="#00cdd0"
+                  progressColor={
+                    vpc >= 75
+                      ? "#d93000"
+                      : vpc >= 50
+                      ? "#ff8f2f"
+                      : vpc >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    vpc >= 75
+                      ? "#d93000"
+                      : vpc >= 50
+                      ? "#ff8f2f"
+                      : vpc >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
