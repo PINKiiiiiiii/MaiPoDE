@@ -1,14 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { CircularProgressbar } from "react-circular-progressbar";
 import BarChartDoc from "./BarChartDoc";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import user from "./Picture/user.png";
 import userad from "./Picture/userad.png";
 
@@ -144,7 +141,7 @@ function HomeDoc(props) {
               </h1>
               {/* </div> */}
               <div className="row wrapper">
-                <img src={user} style={{ width: "27%" }} />
+                <img alt="" src={user} style={{ width: "27%" }} />
               </div>
             </div>
           </div>
@@ -165,7 +162,7 @@ function HomeDoc(props) {
               </h1>
 
               <div className="row wrapper">
-                <img src={userad} style={{ width: "27%" }} />
+                <img alt="" src={userad} style={{ width: "27%" }} />
               </div>
             </div>
           </div>

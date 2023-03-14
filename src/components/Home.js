@@ -1,18 +1,31 @@
 import { useNavigate } from "react-router-dom";
-import team from "./Picture/team.jpg";
+import { useEffect } from "react";
 import check from "./Picture/check.png";
 import easy from "./Picture/easy2.png";
 import fast from "./Picture/fast2.png";
 import quality from "./Picture/quality2.png";
-import info from "./Picture/info.png";
 import calibrate from "./Picture/calibrate.png";
 import test from "./Picture/test.png";
 import result from "./Picture/result.png";
 import happiness from "./Picture/happiness.jpg";
-import Pic1 from "./Picture/Pic1.png";
 import hero from "./Video/hero.mp4";
+import axios from "axios";
 
 function Home(props) {
+  useEffect(() => {
+    axios
+      .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
+        id: "dnUztq4KUUqZ1cdrFHRZ",
+      })
+      .then((response) => {
+        // handle success
+        console.log(response.data.PredictionParts[1]);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  }, []);
   const navigate = useNavigate();
   const handleClickTest = () => {
     navigate("/signedin/test");
@@ -77,7 +90,7 @@ function Home(props) {
       </div>
 
       {/* <div className="col-5 wrapper" style={{ backgroundColor: "#d1f7e5" }}>
-          <img src={Pic1} style={{ width: "100%" }} />
+          <img alt="" src={Pic1} style={{ width: "100%" }} />
         </div> */}
       <div className="row">
         <div
@@ -94,7 +107,7 @@ function Home(props) {
             <div className="col-4">
               <div className="row">
                 <div className="col-2">
-                  <img src={easy} style={{ width: "100%" }} />
+                  <img alt="" src={easy} style={{ width: "100%" }} />
                 </div>
                 <div className="col-10 text-white">
                   <h2>ใช้งานง่าย</h2>
@@ -105,7 +118,7 @@ function Home(props) {
             <div className="col-4">
               <div className="row">
                 <div className="col-2">
-                  <img src={fast} style={{ width: "100%" }} />
+                  <img alt="" src={fast} style={{ width: "100%" }} />
                 </div>
                 <div className="col-10 text-white">
                   <h2>รวดเร็ว</h2>
@@ -116,7 +129,7 @@ function Home(props) {
             <div className="col-4">
               <div className="row">
                 <div className="col-2">
-                  <img src={quality} style={{ width: "100%" }} />
+                  <img alt="" src={quality} style={{ width: "100%" }} />
                 </div>
                 <div className="col-10 text-white">
                   <h2>มีประสิทธิภาพ</h2>
@@ -141,7 +154,7 @@ function Home(props) {
             paddingBottom: "35px",
           }}
         >
-          <img src={happiness} style={{ width: "100%" }} />
+          <img alt="" src={happiness} style={{ width: "100%" }} />
         </div>
         <div className="col-7">
           <h4 style={{ color: "#4953f5", marginBottom: "20px" }}>
@@ -156,7 +169,7 @@ function Home(props) {
           <br />
           <div className="row" onClick={handleClickTest}>
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>คัดกรองโรคอัลไซเมอร์</h3>
@@ -165,7 +178,7 @@ function Home(props) {
           </div>
           <div className="row">
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>ให้คำแนะนำ</h3>
@@ -176,7 +189,7 @@ function Home(props) {
           </div>
           <div className="row" onClick={handleClickAlzheimer}>
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>ให้ความรู้</h3>
@@ -205,7 +218,7 @@ function Home(props) {
           {/* <div className="col-3">
             <div className="card" style={{ width: "100%", margin: "20px" }}>
               <div className="card-body text-center" style={{ padding: "40px" }}>
-                <img src={info} style={{ width: "100px" }} />
+                <img alt="" src={info} style={{ width: "100px" }} />
                 <h3 className="card-title">กรอกข้อมูลส่วนตัว</h3>
                 <p className="card-text" style={{ fontSize: "20px" }}>
                   ได้แก่ เพศ อายุ โรคประจำตัว
@@ -220,7 +233,7 @@ function Home(props) {
                 className="card-body text-center"
                 style={{ padding: "50px" }}
               >
-                <img src={calibrate} style={{ width: "100px" }} />
+                <img alt="" src={calibrate} style={{ width: "100px" }} />
                 <h3 className="text-b">Eye-Calibration</h3>
                 <p className="text-b" style={{ fontSize: "22px" }}>
                   เพื่อให้ทราบลักษณะของดวงตา ขนาดของหน้าจอ
@@ -235,7 +248,7 @@ function Home(props) {
                 className="card-body text-center"
                 style={{ padding: "50px" }}
               >
-                <img src={test} style={{ width: "100px" }} />
+                <img alt="" src={test} style={{ width: "100px" }} />
                 <h3 className="text-b">ทดสอบ</h3>
                 <p className="text-b" style={{ fontSize: "22px" }}>
                   แบบทดสอบการทำงานของดวงตาทั้งหมด 5 แบบทดสอบ โดยใช้เวลาเพียงแค่
@@ -250,7 +263,7 @@ function Home(props) {
                 className="card-body text-center"
                 style={{ padding: "50px" }}
               >
-                <img src={result} style={{ width: "100px" }} />
+                <img alt="" src={result} style={{ width: "100px" }} />
                 <h3 className="text-b">ผลการทดสอบ</h3>
                 <p className="text-b" style={{ fontSize: "22px" }}>
                   เปอร์เซ็นต์ความสามารถของดวงตา
@@ -275,16 +288,16 @@ function Home(props) {
               และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
             </p>
             <div className="my-5 social">
-              <a href="#" className="pl-0 pr-3">
+              <a href="/" className="pl-0 pr-3">
                 <span className="icon-facebook"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-twitter"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-instagram"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-linkedin"></span>
               </a>
             </div>
@@ -295,19 +308,19 @@ function Home(props) {
                 <h2 className="footer-heading">Quick Links</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Amazing Atmosphere</a>
+                    <a href="/">Amazing Atmosphere</a>
                   </li>
                   <li>
-                    <a href="#">Caring Staff</a>
+                    <a href="/">Caring Staff</a>
                   </li>
                   <li>
-                    <a href="#">FAQs</a>
+                    <a href="/">FAQs</a>
                   </li>
                   <li>
-                    <a href="#">About Us</a>
+                    <a href="/">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Contact Us</a>
+                    <a href="/">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -315,16 +328,16 @@ function Home(props) {
                 <h2 className="footer-heading">Helpful Link</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Hospice Care</a>
+                    <a href="/">Hospice Care</a>
                   </li>
                   <li>
-                    <a href="#">Excellent Cuisine</a>
+                    <a href="/">Excellent Cuisine</a>
                   </li>
                   <li>
-                    <a href="#">Privacy</a>
+                    <a href="/">Privacy</a>
                   </li>
                   <li>
-                    <a href="#">Terms</a>
+                    <a href="/">Terms</a>
                   </li>
                 </ul>
               </div>
@@ -332,16 +345,16 @@ function Home(props) {
                 <h2 className="footer-heading">Resources</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Health Care</a>
+                    <a href="/">Health Care</a>
                   </li>
                   <li>
-                    <a href="#">Elderly Care</a>
+                    <a href="/">Elderly Care</a>
                   </li>
                   <li>
-                    <a href="#">Care with Love</a>
+                    <a href="/">Care with Love</a>
                   </li>
                   <li>
-                    <a href="#">Quality Care</a>
+                    <a href="/">Quality Care</a>
                   </li>
                 </ul>
               </div>

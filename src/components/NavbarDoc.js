@@ -12,12 +12,12 @@ function NavbarDoc(props) {
           className="container-fluid"
           style={{ paddingLeft: "1vh", paddingRight: "10vh" }}
         >
-          <img style={{ height: "50px" }} />
+          <img alt="" style={{ height: "50px" }} />
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav">
               <li className="mx-lg-3">
                 <NavLink className="nav-link" to="/admin/home">
-                  <img src={logo} style={{ height: "3vh" }} />
+                  <img alt="" src={logo} style={{ height: "3vh" }} />
                 </NavLink>
               </li>
             </ul>

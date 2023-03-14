@@ -7,14 +7,9 @@ import webgazer from "./../Scripts/Webgazer/index";
 import nj from "numjs";
 import reload from "./Picture/reload.png";
 import play from "./Picture/play.png";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import db from "./firebase/firebaseConfig";
-import {
-  getStorage,
-  ref,
-  uploadString,
-  getDownloadURL,
-} from "firebase/storage";
+import { getStorage, ref, uploadString } from "firebase/storage";
 
 import exampleVideoSrc from "./Video/Example.mp4";
 
@@ -24,33 +19,33 @@ const btnCnts: Array<number> = nj
   .arange<number>(1, N_BTNS + 1)
   .tolist<number>();
 
-interface IWebgazerData {
-  x: string;
-  y: string;
-  eyeFeatures: {
-    left: {
-      height: string;
-      imagex: string;
-      imagey: string;
-    };
-    right: {
-      height: string;
-      imagex: string;
-      imagey: string;
-    };
-  };
-}
+// interface IWebgazerData {
+//   x: string;
+//   y: string;
+//   eyeFeatures: {
+//     left: {
+//       height: string;
+//       imagex: string;
+//       imagey: string;
+//     };
+//     right: {
+//       height: string;
+//       imagex: string;
+//       imagey: string;
+//     };
+//   };
+// }
 interface IBtnProps {
   id: string;
   color: string;
   opacity: number;
   disabled: boolean;
 }
-interface ICanvasData {
-  height: number;
-  patch: ImageData;
-  width: number;
-}
+// interface ICanvasData {
+//   height: number;
+//   patch: ImageData;
+//   width: number;
+// }
 // baseBtnProps won't be changed throughout the calibration process. (For restarting)
 const baseBtnProps: IBtnProps[] = btnCnts.map((i: number): IBtnProps => {
   return {
@@ -230,20 +225,17 @@ const WebgazerCanvas: React.FC<any> = (props) => {
       );
 
       // 'file' comes from the Blob or File API
-      uploadString(storageRef, dl, "data_url").then((snapshot) => {
-        getDownloadURL(storageRef).then((url) => {
-          addDoc(collection(db, "Results"), {
-            User: props.id,
-            Time: new Date(),
-            Calibrate: url,
-            Finish: false,
-          })
-            .then((docRef) => {
-              props.setStorageId(docRef.id);
-            })
-            .catch((error) => console.error("Error adding document: ", error));
-        });
-      });
+      uploadString(storageRef, dl, "data_url");
+      addDoc(collection(db, "Results"), {
+        User: props.id,
+        Time: new Date(),
+        Calibrate: `${props.id + " calibrate " + Date() + ".csv"}`,
+      })
+        .then((docRef) => {
+          props.setStorageId(docRef.id);
+        })
+        .catch((error) => console.error("Error adding document: ", error));
+
       webgazer.pause();
     });
   };
@@ -322,7 +314,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
       btnObjs.current = stBtnObjs;
       setToggleRender((x: boolean): boolean => !x);
     }
-  }, [handleCalibBtn]);
+  }, [handleCalibBtn, finish]);
 
   useEffect((): void => {
     if (btnElemsCreated) {
@@ -385,7 +377,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
         >
           <div className="container-fluid">
             <button className="btn btn-light" onClick={handleRestartBtn}>
-              <img src={reload} style={{ height: "20px" }} />
+              <img src={reload} alt="" style={{ height: "20px" }} />
               {/* <Typography variant="subtitle1">
                 เตรียมพร้อมการมองอีกครั้ง
               </Typography> */}
@@ -400,7 +392,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
             <ul className="nav navbar-nav">
               <li className="nav-item">
                 <button className="btn btn-light" onClick={handleHelpBtn}>
-                  <img src={play} style={{ height: "15px" }} />
+                  <img src={play} alt="" style={{ height: "15px" }} />
                   {/* <Typography variant="subtitle1">แนะนำการใช้งาน</Typography> */}
                 </button>
               </li>
@@ -442,7 +434,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
             </button>
           </Modal.Footer>
         </Modal>
-        {/* <Modal
+        <Modal
           show={finish}
           onHide={handleFiveSec}
           backdrop="static"
@@ -471,10 +463,10 @@ const WebgazerCanvas: React.FC<any> = (props) => {
             >
               <Typography variant="subtitle1">เริ่มทดสอบ</Typography>
             </button>
-          </Modal.Footer> */}
-        {/* </Modal> */}
+          </Modal.Footer>
+        </Modal>
         <Modal
-          show={finish}
+          show={goNextPage}
           onHide={nextPage}
           backdrop="static"
           keyboard={DEBUG}

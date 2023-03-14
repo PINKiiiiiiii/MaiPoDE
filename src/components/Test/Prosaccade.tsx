@@ -1,22 +1,14 @@
-import { memo, useCallback, useEffect, useRef, useState } from "react";
-import { Modal } from "react-bootstrap";
-import { Typography } from "@mui/material";
+import { memo, useCallback, useEffect, useRef } from "react";
 import webgazer from "../../Scripts/Webgazer/index";
-import nj from "numjs";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import prosaccade from "./../Video/Fixation.mp4";
+import prosaccade from "./../Video/prosaccade.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import prosaccadeAudio from "./../../PoDE/Audio/prosaccade.mp3";
 import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
-import {
-  getStorage,
-  ref,
-  uploadString,
-  getDownloadURL,
-} from "firebase/storage";
+import { getStorage, ref, uploadString } from "firebase/storage";
 
 const arrHead: string[] = [
   "time",
@@ -76,14 +68,12 @@ const Prosaccade: React.FC<any> = (props) => {
       );
 
       // 'file' comes from the Blob or File API
-      uploadString(storageRef, dl, "data_url").then((snapshot) => {
-        getDownloadURL(storageRef).then((url) => {
-          const docRef = doc(db, "Results", `${props.storageId}`);
-          updateDoc(docRef, {
-            Prosaccade: url,
-          });
-        });
+      uploadString(storageRef, dl, "data_url");
+      const docRef = doc(db, "Results", `${props.storageId}`);
+      updateDoc(docRef, {
+        Prosaccade: `${props.id + " prosaccade " + Date() + ".csv"}`,
       });
+
       // webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
@@ -104,7 +94,7 @@ const Prosaccade: React.FC<any> = (props) => {
       const parentDiv = document.getElementsByClassName("video-background")[0];
       parentDiv.appendChild(btn);
     });
-  }, []);
+  }, [navigate, props.id, props.storageId]);
 
   return (
     <div className="video-background">

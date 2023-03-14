@@ -16,7 +16,7 @@ import activity from "./Picture/activity.jpg";
 function Alzheimer() {
   return (
     <div className="container-fluid" style={{ padding: "0px" }}>
-      <img src={ad} style={{ width: "100%", opacity: "0.3" }} />
+      <img alt="" src={ad} style={{ width: "100%", opacity: "0.3" }} />
       <h1
         className="centered-ad text-b"
         style={{
@@ -46,7 +46,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={event} style={{ width: "120px" }} />
+                <img alt="" src={event} style={{ width: "120px" }} />
                 <h3 className="text-b">ลืมเหตุการณ์</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   ที่พึ่งผ่านไป
@@ -60,7 +60,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={speak} style={{ width: "120px" }} />
+                <img alt="" src={speak} style={{ width: "120px" }} />
                 <h3 className="text-b">ความเข้าใจ</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   เข้าใจบทสนทนาได้น้อยลง
@@ -74,7 +74,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={friend} style={{ width: "120px" }} />
+                <img alt="" src={friend} style={{ width: "120px" }} />
                 <h3 className="text-b">ลืมชื่อเพื่อน</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   หรือของใช้ในชีวิตประจำวัน
@@ -88,7 +88,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={sentence} style={{ width: "120px" }} />
+                <img alt="" src={sentence} style={{ width: "120px" }} />
                 <h3 className="text-b">ลืมประโยค</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   ขณะพูดกลางคัน
@@ -104,7 +104,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={thing} style={{ width: "120px" }} />
+                <img alt="" src={thing} style={{ width: "120px" }} />
                 <h3 className="text-b">ลืมของ</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   ไว้ที่ไม่ควรจะลืม เช่น ลืมกระเป๋าสตางค์ไว้ในตู้เย็น
@@ -118,7 +118,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={problem} style={{ width: "120px" }} />
+                <img alt="" src={problem} style={{ width: "120px" }} />
                 <h3 className="text-b">มีปัญหา</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   เมื่อต้องคิดวางแผน และประมาลผล
@@ -132,7 +132,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={confuse} style={{ width: "120px" }} />
+                <img alt="" src={confuse} style={{ width: "120px" }} />
                 <h3 className="text-b">รู้สึกสับสน</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   หลงทาง ไม่คุ้นเคยกับสิ่งแวดล้อมเดิม ๆ
@@ -146,7 +146,7 @@ function Alzheimer() {
                 className="card-body text-center"
                 style={{ padding: "40px" }}
               >
-                <img src={angry} style={{ width: "120px" }} />
+                <img alt="" src={angry} style={{ width: "120px" }} />
                 <h3 className="text-b">อารมณ์แปรปรวน</h3>
                 <p className="text-b" style={{ fontSize: "20px" }}>
                   กังวล หงุดหงิด โกรธ และอารมณ์เสียง่าย
@@ -178,7 +178,7 @@ function Alzheimer() {
           <br />
           <div className="row">
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>การซักประวัติ</h3>
@@ -190,7 +190,7 @@ function Alzheimer() {
           </div>
           <div className="row">
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>การตรวจร่างกาย</h3>
@@ -202,7 +202,7 @@ function Alzheimer() {
           </div>
           <div className="row">
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>การตรวจความจำ</h3>
@@ -213,7 +213,7 @@ function Alzheimer() {
           </div>
           <div className="row">
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>การตรวจภาพวินิจฉัยสมอง</h3>
@@ -225,7 +225,7 @@ function Alzheimer() {
           </div>
           <div className="row">
             <div className="col-1">
-              <img src={check} style={{ width: "100%" }} />
+              <img alt="" src={check} style={{ width: "100%" }} />
             </div>
             <div className="col-11 text-b">
               <h3>การตรวจเลือด</h3>
@@ -244,7 +244,7 @@ function Alzheimer() {
             paddingBottom: "200px",
           }}
         >
-          <img src={adtest} style={{ width: "100%" }} />
+          <img alt="" src={adtest} style={{ width: "100%" }} />
         </div>
       </div>
       <div className="container-fluid bg-green" style={{ padding: "10px" }}>
@@ -260,7 +260,7 @@ function Alzheimer() {
               paddingRight: "50px",
             }}
           >
-            <img src={venn} style={{ width: "90%" }} />
+            <img alt="" src={venn} style={{ width: "90%" }} />
           </div>
           <div className="col-7">
             <h4 style={{ color: "#4953f5", marginBottom: "20px" }}>
@@ -270,7 +270,7 @@ function Alzheimer() {
             <br />
             <div className="row">
               <div className="col-1">
-                <img src={check} style={{ width: "100%" }} />
+                <img alt="" src={check} style={{ width: "100%" }} />
               </div>
               <div className="col-11 text-b">
                 <h3>อายุ</h3>
@@ -282,7 +282,7 @@ function Alzheimer() {
             </div>
             <div className="row">
               <div className="col-1">
-                <img src={check} style={{ width: "100%" }} />
+                <img alt="" src={check} style={{ width: "100%" }} />
               </div>
               <div className="col-11 text-b">
                 <h3>ปัจจัยทางพันธุกรรม</h3>
@@ -293,7 +293,7 @@ function Alzheimer() {
             </div>
             <div className="row">
               <div className="col-1">
-                <img src={check} style={{ width: "100%" }} />
+                <img alt="" src={check} style={{ width: "100%" }} />
               </div>
               <div className="col-11 text-b">
                 <h3>เพศ</h3>
@@ -340,6 +340,7 @@ function Alzheimer() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={medicine}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -358,6 +359,7 @@ function Alzheimer() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={activity}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -385,16 +387,16 @@ function Alzheimer() {
               และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
             </p>
             <div className="my-5 social">
-              <a href="#" className="pl-0 pr-3">
+              <a href="/" className="pl-0 pr-3">
                 <span className="icon-facebook"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-twitter"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-instagram"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-linkedin"></span>
               </a>
             </div>
@@ -405,19 +407,19 @@ function Alzheimer() {
                 <h2 className="footer-heading">Quick Links</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Amazing Atmosphere</a>
+                    <a href="/">Amazing Atmosphere</a>
                   </li>
                   <li>
-                    <a href="#">Caring Staff</a>
+                    <a href="/">Caring Staff</a>
                   </li>
                   <li>
-                    <a href="#">FAQs</a>
+                    <a href="/">FAQs</a>
                   </li>
                   <li>
-                    <a href="#">About Us</a>
+                    <a href="/">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Contact Us</a>
+                    <a href="/">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -425,16 +427,16 @@ function Alzheimer() {
                 <h2 className="footer-heading">Helpful Link</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Hospice Care</a>
+                    <a href="/">Hospice Care</a>
                   </li>
                   <li>
-                    <a href="#">Excellent Cuisine</a>
+                    <a href="/">Excellent Cuisine</a>
                   </li>
                   <li>
-                    <a href="#">Privacy</a>
+                    <a href="/">Privacy</a>
                   </li>
                   <li>
-                    <a href="#">Terms</a>
+                    <a href="/">Terms</a>
                   </li>
                 </ul>
               </div>
@@ -442,16 +444,16 @@ function Alzheimer() {
                 <h2 className="footer-heading">Resources</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Health Care</a>
+                    <a href="/">Health Care</a>
                   </li>
                   <li>
-                    <a href="#">Elderly Care</a>
+                    <a href="/">Elderly Care</a>
                   </li>
                   <li>
-                    <a href="#">Care with Love</a>
+                    <a href="/">Care with Love</a>
                   </li>
                   <li>
-                    <a href="#">Quality Care</a>
+                    <a href="/">Quality Care</a>
                   </li>
                 </ul>
               </div>

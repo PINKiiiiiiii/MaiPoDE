@@ -12,7 +12,7 @@ import call from "./Picture/Call.png";
 function Aboutus() {
   return (
     <div className="container-fluid" style={{ padding: "0px" }}>
-      <img src={cambodia} style={{ width: "100%", opacity: "0.3" }} />
+      <img alt="" src={cambodia} style={{ width: "100%", opacity: "0.3" }} />
       <h1
         className="centered-about"
         style={{
@@ -41,6 +41,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={one}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -65,6 +66,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={two}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -90,6 +92,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={three}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -115,6 +118,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={four}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -156,6 +160,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={Pinky}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -176,6 +181,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={Lenny}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -196,6 +202,7 @@ function Aboutus() {
                 style={{ padding: "20px" }}
               >
                 <img
+                  alt=""
                   src={Tin}
                   style={{ width: "100%", marginBottom: "20px" }}
                 />
@@ -248,7 +255,7 @@ function Aboutus() {
                   <div className="col-6">
                     <div className="row">
                       <div className="col-2">
-                        <img src={call} style={{ width: "100%" }} />
+                        <img alt="" src={call} style={{ width: "100%" }} />
                       </div>
                       <div className="col-10">
                         <h3 className="text-b">เบอร์โทร</h3>
@@ -259,7 +266,7 @@ function Aboutus() {
                   <div className="col-6">
                     <div className="row">
                       <div className="col-2">
-                        <img src={mail} style={{ width: "100%" }} />
+                        <img alt="" src={mail} style={{ width: "100%" }} />
                       </div>
                       <div className="col-10">
                         <h3 className="text-b">อีเมล</h3>
@@ -349,16 +356,16 @@ function Aboutus() {
               และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
             </p>
             <div className="my-5 social">
-              <a href="#" className="pl-0 pr-3">
+              <a href="/" className="pl-0 pr-3">
                 <span className="icon-facebook"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-twitter"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-instagram"></span>
               </a>
-              <a href="#" className="pl-3 pr-3">
+              <a href="/" className="pl-3 pr-3">
                 <span className="icon-linkedin"></span>
               </a>
             </div>
@@ -369,19 +376,19 @@ function Aboutus() {
                 <h2 className="footer-heading">Quick Links</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Amazing Atmosphere</a>
+                    <a href="/">Amazing Atmosphere</a>
                   </li>
                   <li>
-                    <a href="#">Caring Staff</a>
+                    <a href="/">Caring Staff</a>
                   </li>
                   <li>
-                    <a href="#">FAQs</a>
+                    <a href="/">FAQs</a>
                   </li>
                   <li>
-                    <a href="#">About Us</a>
+                    <a href="/">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Contact Us</a>
+                    <a href="/">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -389,16 +396,16 @@ function Aboutus() {
                 <h2 className="footer-heading">Helpful Link</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Hospice Care</a>
+                    <a href="/">Hospice Care</a>
                   </li>
                   <li>
-                    <a href="#">Excellent Cuisine</a>
+                    <a href="/">Excellent Cuisine</a>
                   </li>
                   <li>
-                    <a href="#">Privacy</a>
+                    <a href="/">Privacy</a>
                   </li>
                   <li>
-                    <a href="#">Terms</a>
+                    <a href="/">Terms</a>
                   </li>
                 </ul>
               </div>
@@ -406,16 +413,16 @@ function Aboutus() {
                 <h2 className="footer-heading">Resources</h2>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#">Health Care</a>
+                    <a href="/">Health Care</a>
                   </li>
                   <li>
-                    <a href="#">Elderly Care</a>
+                    <a href="/">Elderly Care</a>
                   </li>
                   <li>
-                    <a href="#">Care with Love</a>
+                    <a href="/">Care with Love</a>
                   </li>
                   <li>
-                    <a href="#">Quality Care</a>
+                    <a href="/">Quality Care</a>
                   </li>
                 </ul>
               </div>

@@ -1,10 +1,7 @@
 import { useEffect } from "react";
-import check from "./Picture/check.png";
 import { useNavigate } from "react-router-dom";
 import webgazer from "../Scripts/Webgazer/index";
 import "./WebgazerCanvas";
-import medicine from "./Picture/medicine.jpg";
-import activity from "./Picture/activity.jpg";
 import time from "./Picture/7min.png";
 import sound from "./Picture/Sound.png";
 import good from "./Picture/Businessman.png";
@@ -45,10 +42,10 @@ function Test(props) {
           >
             <div className="row mb-4">
               <div className="col-6">
-                <img src={sit} style={{ width: "100%" }} />
+                <img alt="" src={sit} style={{ width: "100%" }} />
               </div>
               <div className="col-6">
-                <img src={sit2} style={{ width: "100%" }} />
+                <img alt="" src={sit2} style={{ width: "100%" }} />
               </div>
             </div>
             <h4>นั่งทำแบบทดสอบในท่าทางที่เหมาะสม</h4>
@@ -61,10 +58,10 @@ function Test(props) {
           >
             <div className="row mb-4">
               <div className="col-6">
-                <img src={Greensquare} style={{ width: "100%" }} />
+                <img alt="" src={Greensquare} style={{ width: "100%" }} />
               </div>
               <div className="col-6">
-                <img src={Greensquare2} style={{ width: "100%" }} />
+                <img alt="" src={Greensquare2} style={{ width: "100%" }} />
               </div>
             </div>
 
@@ -81,6 +78,7 @@ function Test(props) {
             <div className="row">
               <div className="col-4">
                 <img
+                  alt=""
                   src={time}
                   style={{ width: "60%", marginBottom: "20px" }}
                 />
@@ -88,6 +86,7 @@ function Test(props) {
               </div>
               <div className="col-4">
                 <img
+                  alt=""
                   src={sound}
                   style={{ width: "60%", marginBottom: "20px" }}
                 />
@@ -95,6 +94,7 @@ function Test(props) {
               </div>
               <div className="col-4">
                 <img
+                  alt=""
                   src={good}
                   style={{ width: "60%", marginBottom: "20px" }}
                 />

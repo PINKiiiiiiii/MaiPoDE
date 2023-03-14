@@ -1,4 +1,4 @@
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "./Picture/Logo.png";
 import { Routes, Route } from "react-router-dom";
 import Aboutus from "./Aboutus";
@@ -7,20 +7,10 @@ import Test from "./Test";
 import Records from "./Records";
 import Alzheimer from "./Alzheimer";
 import Result from "./Result";
-import HomeDoc from "./HomeDoc";
-import ResultDoc from "./ResultDoc";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/firebaseConfig";
-import WebgazerCanvas from "./WebgazerCanvas";
-import {
-  doc,
-  getDoc,
-  collection,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import db from "./firebase/firebaseConfig";
 
 function Navbar(props) {
@@ -36,7 +26,7 @@ function Navbar(props) {
         navigate("/");
       }
     });
-  }, []);
+  }, [navigate, props.storageId]);
 
   const handleLogout = () => {
     signOut(auth)
@@ -64,12 +54,12 @@ function Navbar(props) {
           className="container-fluid"
           style={{ paddingLeft: "10vh", paddingRight: "10vh" }}
         >
-          <img style={{ height: "50px" }} />
+          <img alt="" style={{ height: "50px" }} />
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="mx-lg-3">
                 <NavLink className="nav-link" to="/signedin/home">
-                  <img src={logo} style={{ height: "3vh" }} />
+                  <img alt="" src={logo} style={{ height: "3vh" }} />
                 </NavLink>
               </li>
               <li className="mx-lg-3">

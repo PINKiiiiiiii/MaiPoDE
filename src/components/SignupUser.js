@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import app, { auth } from "./firebase/firebaseConfig";
-import firebaseConfig from "./firebase/firebaseConfig";
+import { auth } from "./firebase/firebaseConfig";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -28,20 +27,21 @@ const SignupUser = () => {
     FamilyHasAD: false,
   });
 
+  const navigate = useNavigate();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         navigate("/signedin/home");
       }
     });
-  }, []);
+  }, [navigate]);
 
+  console.log(toggleRender);
   const handleFormChange = (e) => {
     formValues.current[e.target.name] = e.target.value;
     // console.log(typeof e.target.value);
     setToggleRender((x) => !x);
   };
-  const navigate = useNavigate();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ const SignupUser = () => {
         console.log(errorCode, errorMessage);
         // ..
       });
-    const docRef = await addDoc(collection(db, "Users"), {
+    await addDoc(collection(db, "Users"), {
       Name: {
         First: formValues.current.First,
         Middle: formValues.current.Middle,

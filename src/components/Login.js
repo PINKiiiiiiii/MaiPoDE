@@ -1,7 +1,7 @@
-import { Link, Navigate, useNavigate, Routes, Route } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logo from "./Picture/Logo.png";
-import app, { auth } from "./firebase/firebaseConfig";
+import { auth } from "./firebase/firebaseConfig";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import Alert from "react-bootstrap/Alert";
 
@@ -18,7 +18,7 @@ const Login = () => {
         navigate("/signedin/home");
       }
     });
-  }, []);
+  }, [navigate]);
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -50,6 +50,7 @@ const Login = () => {
             <div className="card" style={{ borderRadius: "1rem" }}>
               <div className="card-body p-5 text-center">
                 <img
+                  alt=""
                   src={logo}
                   style={{ width: "40%", marginBottom: "20px" }}
                 />

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import app, { auth } from "./components/firebase/firebaseConfig";
-import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./components/firebase/firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import SignupUser from "./components/SignupUser";
@@ -13,14 +13,7 @@ import Prosaccade from "./components/Test/Prosaccade";
 import Antisaccade from "./components/Test/Antisaccade";
 import Smoothpursuit from "./components/Test/Smoothpursuit";
 import VpcTask from "./components/Test/VpcTask";
-import {
-  doc,
-  getDoc,
-  collection,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import db from "./components/firebase/firebaseConfig";
 
 function App(props) {

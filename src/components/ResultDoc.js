@@ -1,8 +1,5 @@
-import React from "react";
 import Circle from "react-circle";
-import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useState } from "react";
 import LineChart from "./LineChart";
 import Percent from "./Picture/Percent.png";
 import Green from "./Picture/Green.png";
@@ -52,14 +49,14 @@ function ResultDoc() {
           <div className="widget">
             <div className="row text-center wrapper-center mb-3 text-b">
               <h2>เกณฑ์ความคล้ายโรคอัลไซเมอร์</h2>
-              <img src={Percent} style={{ width: "90%" }} />
+              <img alt="" src={Percent} style={{ width: "90%" }} />
             </div>
             <div className="row mb-3 wrapper-center">
               <div className="col-4 text-b">
                 <h4>คล้ายเสียงปกติ</h4>
               </div>
               <div className="col-3">
-                <img src={Green} style={{ width: "80%" }} />
+                <img alt="" src={Green} style={{ width: "80%" }} />
               </div>
               <div className="col-5 text-gray">
                 <h4>คล้ายเสียงปกติ</h4>
@@ -71,7 +68,7 @@ function ResultDoc() {
                 <h4>คล้ายคลึงต่ำ</h4>
               </div>
               <div className="col-3">
-                <img src={Yellow} style={{ width: "80%" }} />
+                <img alt="" src={Yellow} style={{ width: "80%" }} />
               </div>
               <div className="col-5 text-gray">
                 <h4>คล้ายเสียงปกติ</h4>
@@ -82,7 +79,7 @@ function ResultDoc() {
                 <h4>คล้ายคลึงปานกลาง</h4>
               </div>
               <div className="col-3">
-                <img src={Orange} style={{ width: "80%" }} />
+                <img alt="" src={Orange} style={{ width: "80%" }} />
               </div>
               <div className="col-5 text-gray">
                 <h4>คล้ายเสียงปกติ</h4>
@@ -93,7 +90,7 @@ function ResultDoc() {
                 <h4>คล้ายคลึงสูง</h4>
               </div>
               <div className="col-3">
-                <img src={Red} style={{ width: "80%" }} />
+                <img alt="" src={Red} style={{ width: "80%" }} />
               </div>
               <div className="col-5 text-gray">
                 <h4>คล้ายเสียงปกติ</h4>

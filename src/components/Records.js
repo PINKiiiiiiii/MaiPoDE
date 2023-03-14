@@ -4,14 +4,14 @@ import check from "./Picture/check.png";
 import checkleft from "./Picture/checkleft.png";
 import "react-circular-progressbar/dist/styles.css";
 import BarChart from "./BarChart";
-import { useEffect, useState, useRef } from "react";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import db from "./firebase/firebaseConfig";
 
 function Records(props) {
   let cnt = 0;
   const [count, setCount] = useState(0);
-  const [active, isActive] = useState([
+  const [active] = useState([
     false,
     false,
     false,
@@ -26,7 +26,7 @@ function Records(props) {
     false,
     false,
   ]);
-  const [date, setDate] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [date] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [loading, isLoading] = useState(true);
 
   useEffect(() => {
@@ -397,7 +397,7 @@ function Records(props) {
               data-bs-target="#carouselExample"
               data-bs-slide="prev"
             >
-              <img src={checkleft} style={{ width: "70px" }} />
+              <img alt="" src={checkleft} style={{ width: "70px" }} />
             </button>
             <button
               className="carousel-control-next"
@@ -405,7 +405,7 @@ function Records(props) {
               data-bs-target="#carouselExample"
               data-bs-slide="next"
             >
-              <img src={check} style={{ width: "70px" }} />
+              <img alt="" src={check} style={{ width: "70px" }} />
             </button>
           </div>
         </div>
@@ -422,16 +422,16 @@ function Records(props) {
                 และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
               </p>
               <div className="my-5 social">
-                <a href="#" className="pl-0 pr-3">
+                <a href="/" className="pl-0 pr-3">
                   <span className="icon-facebook"></span>
                 </a>
-                <a href="#" className="pl-3 pr-3">
+                <a href="/" className="pl-3 pr-3">
                   <span className="icon-twitter"></span>
                 </a>
-                <a href="#" className="pl-3 pr-3">
+                <a href="/" className="pl-3 pr-3">
                   <span className="icon-instagram"></span>
                 </a>
-                <a href="#" className="pl-3 pr-3">
+                <a href="/" className="pl-3 pr-3">
                   <span className="icon-linkedin"></span>
                 </a>
               </div>
@@ -442,19 +442,19 @@ function Records(props) {
                   <h2 className="footer-heading">Quick Links</h2>
                   <ul className="list-unstyled">
                     <li>
-                      <a href="#">Amazing Atmosphere</a>
+                      <a href="/">Amazing Atmosphere</a>
                     </li>
                     <li>
-                      <a href="#">Caring Staff</a>
+                      <a href="/">Caring Staff</a>
                     </li>
                     <li>
-                      <a href="#">FAQs</a>
+                      <a href="/">FAQs</a>
                     </li>
                     <li>
-                      <a href="#">About Us</a>
+                      <a href="/">About Us</a>
                     </li>
                     <li>
-                      <a href="#">Contact Us</a>
+                      <a href="/">Contact Us</a>
                     </li>
                   </ul>
                 </div>
@@ -462,16 +462,16 @@ function Records(props) {
                   <h2 className="footer-heading">Helpful Link</h2>
                   <ul className="list-unstyled">
                     <li>
-                      <a href="#">Hospice Care</a>
+                      <a href="/">Hospice Care</a>
                     </li>
                     <li>
-                      <a href="#">Excellent Cuisine</a>
+                      <a href="/">Excellent Cuisine</a>
                     </li>
                     <li>
-                      <a href="#">Privacy</a>
+                      <a href="/">Privacy</a>
                     </li>
                     <li>
-                      <a href="#">Terms</a>
+                      <a href="/">Terms</a>
                     </li>
                   </ul>
                 </div>
@@ -479,16 +479,16 @@ function Records(props) {
                   <h2 className="footer-heading">Resources</h2>
                   <ul className="list-unstyled">
                     <li>
-                      <a href="#">Health Care</a>
+                      <a href="/">Health Care</a>
                     </li>
                     <li>
-                      <a href="#">Elderly Care</a>
+                      <a href="/">Elderly Care</a>
                     </li>
                     <li>
-                      <a href="#">Care with Love</a>
+                      <a href="/">Care with Love</a>
                     </li>
                     <li>
-                      <a href="#">Quality Care</a>
+                      <a href="/">Quality Care</a>
                     </li>
                   </ul>
                 </div>

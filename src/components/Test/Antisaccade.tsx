@@ -1,21 +1,14 @@
-import { memo, useCallback, useEffect, useRef, useState } from "react";
-import { Modal } from "react-bootstrap";
-import { Typography } from "@mui/material";
+import { memo, useCallback, useEffect, useRef } from "react";
 import webgazer from "../../Scripts/Webgazer/index";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import antisaccade from "./../Video/Fixation.mp4";
+import antisaccade from "./../Video/antisaccade.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import antisaccadeAudio from "./../../PoDE/Audio/antisaccade.mp3";
 import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
-import {
-  getStorage,
-  ref,
-  uploadString,
-  getDownloadURL,
-} from "firebase/storage";
+import { getStorage, ref, uploadString } from "firebase/storage";
 
 const arrHead: string[] = [
   "time",
@@ -74,15 +67,12 @@ const Antisaccade: React.FC<any> = (props) => {
       );
 
       // 'file' comes from the Blob or File API
-      uploadString(storageRef, dl, "data_url").then((snapshot) => {
-        getDownloadURL(storageRef).then((url) => {
-          const docRef = doc(db, "Results", `${props.storageId}`);
-          console.log(docRef);
-          updateDoc(docRef, {
-            Antisaccade: url,
-          });
-        });
+      uploadString(storageRef, dl, "data_url");
+      const docRef = doc(db, "Results", `${props.storageId}`);
+      updateDoc(docRef, {
+        Antisaccade: `${props.id + " antisaccade " + Date() + ".csv"}`,
       });
+
       // webgazer.showPredictionPoints(false);
       webgazer.pause();
       const btn = document.createElement("button");
@@ -103,7 +93,7 @@ const Antisaccade: React.FC<any> = (props) => {
       const parentDiv = document.getElementsByClassName("video-background")[0];
       parentDiv.appendChild(btn);
     });
-  }, []);
+  }, [navigate, props.id, props.storageId]);
 
   return (
     <div className="video-background">
