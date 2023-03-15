@@ -541,7 +541,13 @@ function Records(props) {
       </div>
     );
   } else {
-    return <div>loading...</div>;
+    return (
+      <div class="text-center text-primary" style={{ marginTop: "300px" }}>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
 }
 

@@ -398,7 +398,13 @@ function Result(props) {
       </div>
     );
   } else {
-    return <div>Loading</div>;
+    return (
+      <div class="text-center text-primary" style={{ marginTop: "300px" }}>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
 }
 
