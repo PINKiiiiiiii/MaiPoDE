@@ -16,6 +16,7 @@ import db from "./firebase/firebaseConfig";
 function Navbar(props) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
+  const [result, setResult] = useState(0);
   // const [id, setId] = useState("");
 
   useEffect(() => {
@@ -109,11 +110,22 @@ function Navbar(props) {
         <Route path="test" element={<Test id={props.id} />} />
         <Route
           path="records"
-          element={<Records id={props.id} finish={props.finish} />}
+          element={
+            <Records id={props.id} finish={props.finish} result={result} />
+          }
         />
         <Route path="alzheimer's" element={<Alzheimer />} />
         <Route path="aboutus" element={<Aboutus />} />
-        <Route path="result" element={<Result storageId={props.storageId} />} />
+        <Route
+          path="result"
+          element={
+            <Result
+              storageId={props.storageId}
+              setResult={setResult}
+              result={result}
+            />
+          }
+        />
       </Routes>
     </div>
   );

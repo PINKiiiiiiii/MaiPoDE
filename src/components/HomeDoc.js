@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import BarChartDoc from "./BarChartDoc";
 import user from "./Picture/user.png";
 import userad from "./Picture/userad.png";
+import Plot from "react-plotly.js";
 
 const rows = [
   {
@@ -169,14 +170,17 @@ function HomeDoc(props) {
         </div>
 
         <div className="col-4">
-          <div className="widget" style={{ paddingBottom: "5px" }}>
-            <div className="row mb-0">
+          <div
+            className="widget"
+            style={{ paddingBottom: "0px", paddingTop: "0px" }}
+          >
+            {/* <div className="row mb-0">
               <h5 className="text-gray">
                 จำนวนผู้ที่เสี่ยงเป็นโรคอัลไซเมอร์ในแต่ละเดือน
               </h5>
-            </div>
+            </div> */}
             <div className="row">
-              <BarChartDoc
+              {/* <BarChartDoc
                 options={{
                   defaults: {
                     global: {
@@ -184,9 +188,25 @@ function HomeDoc(props) {
                     },
                   },
                 }}
+              /> */}
+              <Plot
+                data={[
+                  {
+                    type: "bar",
+                    x: ["ธ.ค.", "ม.ค.", "ก.พ.", "มี.ค."],
+                    y: [20, 30, 32, 50],
+                  },
+                ]}
+                layout={{
+                  title: "จำนวนผู้ที่เสี่ยงเป็นโรคอัลไซเมอร์ในแต่ละเดือน",
+                  font: { size: 14, family: "Anuphan" },
+                  width: 430,
+                  height: 312,
+                  fontFamily: "Anuphan",
+                }}
               />
             </div>
-            <p className="text-center">เดือน</p>
+            {/* <p className="text-center">เดือน</p> */}
           </div>
         </div>
       </div>

@@ -5,8 +5,9 @@ import checkleft from "./Picture/checkleft.png";
 import "react-circular-progressbar/dist/styles.css";
 import BarChart from "./BarChart";
 import { useEffect, useState } from "react";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
 import db from "./firebase/firebaseConfig";
+import Plot from "react-plotly.js";
 
 function Records(props) {
   let cnt = 0;
@@ -27,7 +28,9 @@ function Records(props) {
     false,
   ]);
   const [date] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [result, setResult] = useState(0);
   const [loading, isLoading] = useState(true);
+  let time = 0;
 
   useEffect(() => {
     console.log(props.id);
@@ -41,6 +44,10 @@ function Records(props) {
       querySnapshot.forEach((doc) => {
         // console.log(doc.data());
         active[doc.data().Time.toDate().getMonth() + 1] = true;
+        if (doc.data().Time > time) {
+          time = doc.data().Time;
+          setResult(doc.data().PredictionAll * 100);
+        }
         date[doc.data().Time.toDate().getMonth() + 1] = doc
           .data()
           .Time.toDate()
@@ -65,6 +72,7 @@ function Records(props) {
   if (!loading) {
     const percent = ((count * 100) / 12).toFixed(0);
     console.log(percent);
+    console.log(result);
     return (
       <div className="container-fluid" style={{ padding: "0em" }}>
         <div
@@ -77,7 +85,9 @@ function Records(props) {
         >
           <div className="col-6">
             <div className="widget">
-              <h4 className="text-b">% ความเสี่ยงในการเป็นอัลไซเมอร์ล่าสุด</h4>
+              <h4 className="text-b text-center">
+                % ความเสี่ยงในการเป็นอัลไซเมอร์ล่าสุด
+              </h4>
               <div
                 className="row mb-4"
                 style={{
@@ -87,11 +97,27 @@ function Records(props) {
                 }}
               >
                 <Circle
-                  progress={75}
+                  progress={result.toFixed(1)}
                   size={245}
                   lineWidth={50}
-                  progressColor="#ff8f2f"
-                  textColor="#ff8f2f"
+                  progressColor={
+                    result >= 75
+                      ? "#d93000"
+                      : result >= 50
+                      ? "#ff8f2f"
+                      : result >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
+                  textColor={
+                    result >= 75
+                      ? "#d93000"
+                      : result >= 50
+                      ? "#ff8f2f"
+                      : result >= 25
+                      ? "#f6cb45"
+                      : "#0daa00"
+                  }
                   textStyle={{
                     font: "bold 5rem Anuphan",
                   }}
@@ -103,22 +129,38 @@ function Records(props) {
             </div>
           </div>
           <div className="col-6">
-            <div className="widget">
-              <h4 className="text-b" style={{ paddingBottom: "14px" }}>
+            <div className="widget" style={{ padding: "0px" }}>
+              {/* <h4 className="text-b" style={{ paddingBottom: "14px" }}>
                 ผลการตรวจแต่ละเดือน
-              </h4>
-              <div style={{ width: "100%" }}>
-                <BarChart
-                  options={{
-                    defaults: {
-                      global: {
-                        defaultFontFamily: "Anuphan",
-                        defaultSize: "50px",
-                      },
+              </h4> */}
+              {/* <div style={{ width: "100%" }}> */}
+              {/* <BarChart
+                options={{
+                  defaults: {
+                    global: {
+                      defaultFontFamily: "Anuphan",
+                      defaultSize: "50px",
                     },
-                  }}
-                />
-              </div>
+                  },
+                }}
+                /> */}
+              <Plot
+                data={[
+                  {
+                    type: "bar",
+                    x: ["ม.ค.", "ก.พ.", "มี.ค."],
+                    y: [20, 30, 32],
+                  },
+                ]}
+                layout={{
+                  title: "ผลการตรวจแต่ละเดือน",
+                  font: { size: 18, family: "Anuphan" },
+                  width: 560,
+                  height: 358,
+                  fontFamily: "Anuphan",
+                }}
+              />
+              {/* </div> */}
             </div>
           </div>
         </div>

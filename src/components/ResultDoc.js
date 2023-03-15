@@ -6,6 +6,7 @@ import Green from "./Picture/Green.png";
 import Yellow from "./Picture/Yellow.png";
 import Orange from "./Picture/Orange.png";
 import Red from "./Picture/Red.png";
+import Plot from "react-plotly.js";
 
 function ResultDoc() {
   return (
@@ -190,110 +191,31 @@ function ResultDoc() {
               </div>
             </div>
           </div>
-          {/* <div className="col">
-          <div className="widget">
-            <h5 className="text-b">การมองหลีกเลี่ยงจุด</h5>
-            <div className="row">
-              <Circle
-                progress={35}
-                size={300}
-                lineWidth={50}
-                progressColor="cornflowerblue"
-                textStyle={{
-                  font: "bold 5rem Anuphan",
-                }}
-                roundedStroke={true}
-                showPercentage={true}
-                showPercentageSymbol={true}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="widget">
-            <h5 className="text-b">การมองตามจุดเคลื่อนที่</h5>
-            <div className="row">
-              <Circle
-                progress={35}
-                size={300}
-                lineWidth={50}
-                progressColor="cornflowerblue"
-                textStyle={{
-                  font: "bold 5rem Anuphan",
-                }}
-                roundedStroke={true}
-                showPercentage={true}
-                showPercentageSymbol={true}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="widget">
-            <h5 className="text-b">การมองหลีกเลี่ยงจุด</h5>
-            <div className="row">
-              <Circle
-                progress={35}
-                size={300}
-                lineWidth={50}
-                progressColor="cornflowerblue"
-                textStyle={{
-                  font: "bold 5rem Anuphan",
-                }}
-                roundedStroke={true}
-                showPercentage={true}
-                showPercentageSymbol={true}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="widget">
-            <h5 className="text-b">การมองตามจุดเคลื่อนที่</h5>
-            <div className="row">
-              <Circle
-                progress={35}
-                size={300}
-                lineWidth={50}
-                progressColor="cornflowerblue"
-                textStyle={{
-                  font: "bold 5rem Anuphan",
-                }}
-                roundedStroke={true}
-                showPercentage={true}
-                showPercentageSymbol={true}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="widget">
-            <h5 className="text-b">การแยกแยะภาพ</h5>
-            <div className="row">
-              <Circle
-                progress={35}
-                size={300}
-                lineWidth={50}
-                progressColor="cornflowerblue"
-                textStyle={{
-                  font: "bold 5rem Anuphan",
-                }}
-                roundedStroke={true}
-                showPercentage={true}
-                showPercentageSymbol={true}
-              />
-            </div>
-          </div>
-        </div> */}
         </div>
       </div>
       <div className="row">
         <div className="col-12">
-          <div className="widget" style={{ padding: "50px" }}>
-            <h2 className="mb-4 text-center">สถิติการทำแบบทดสอบแต่ละครั้ง</h2>
-            <h5 className="text-b">%ความคล้าย</h5>
+          <div className="widget">
+            {/* <h2 className="mb-4 text-center">สถิติการทำแบบทดสอบแต่ละครั้ง</h2>
+            <h5 className="text-b">%ความคล้าย</h5> */}
             <div style={{ width: "100%" }}>
-              <LineChart />
+              {/* <LineChart /> */}
+              <Plot
+                data={[
+                  {
+                    type: "line",
+                    x: ["1", "2", "3", "4", "5"],
+                    y: [20, 30, 50, 78, 94],
+                  },
+                ]}
+                layout={{
+                  title: "สถิติการทำแบบทดสอบแต่ละครั้ง",
+                  font: { size: 23, family: "Anuphan" },
+                  width: 1415,
+                  height: 500,
+                  fontFamily: "Anuphan",
+                }}
+              />
             </div>
             <h5 className="text-center mt-2 mb-0">ครั้งที่</h5>
           </div>

@@ -8,6 +8,7 @@ import Yellow from "./Picture/Yellow.png";
 import Orange from "./Picture/Orange.png";
 import Red from "./Picture/Red.png";
 import axios from "axios";
+import Plot from "react-plotly.js";
 
 function Result(props) {
   console.log(props.storageId);
@@ -19,28 +20,7 @@ function Result(props) {
   const [antisaccade, setAntisaccade] = useState(0);
   const [smooth, setSmooth] = useState(0);
   const [vpc, setVpc] = useState(0);
-  // useEffect(() => {
-  //   const docRef = doc(db, "Results", `${props.storageId}`);
-  //   const getPercent = async () => {
-  //     const docSnap = await getDoc(docRef);
-  //     if (docSnap.exists()) {
-  //       setResult(docSnap.data());
-  //       if (docSnap.data() >= 75) {
-  //         setResult(75);
-  //       } else if (docSnap.data() >= 50) {
-  //         setResult(50);
-  //       } else if (docSnap.data() >= 25) {
-  //         setResult(25);
-  //       } else {
-  //         setResult(0);
-  //       }
-  //     } else {
-  //       // doc.data() will be undefined in this case
-  //       console.log("No such document!");
-  //     }
-  //   };
-  //   getPercent();
-  // }, []);
+  //
   useEffect(() => {
     axios
       .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
@@ -77,7 +57,7 @@ function Result(props) {
         >
           <div className="col-5">
             <div className="widget">
-              <h2 className="text-b">ความคล้ายโรคอัลไซเมอร์</h2>
+              <h2 className="text-b text-center">ความคล้ายโรคอัลไซเมอร์</h2>
               <div
                 className="row mb-4"
                 style={{
@@ -125,8 +105,26 @@ function Result(props) {
           </div>
           <div className="col-7">
             <div className="widget">
-              <h2 className="text-b">ผลการตรวจครั้งล่าสุด</h2>
-              <div style={{ width: "100%" }}>{/* <BarChart /> */}</div>
+              {/* <h2 className="text-b">ผลการตรวจครั้งล่าสุด</h2> */}
+              <div style={{ width: "100%" }}>
+                {/* <BarChart /> */}
+                <Plot
+                  data={[
+                    {
+                      type: "bar",
+                      x: ["ม.ค.", "ก.พ.", "มี.ค."],
+                      y: [20, 30, 94],
+                    },
+                  ]}
+                  layout={{
+                    title: "ผลการตรวจครั้งล่าสุด",
+                    font: { size: 23, family: "Anuphan" },
+                    width: 750,
+                    height: 414,
+                    fontFamily: "Anuphan",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
