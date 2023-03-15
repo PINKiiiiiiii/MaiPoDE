@@ -1,7 +1,7 @@
 import Circle from "react-circle";
 import { useEffect, useState } from "react";
 import "react-circular-progressbar/dist/styles.css";
-import BarChart from "./BarChart";
+import pdf from "./File/Medical Report.pdf";
 import Percent from "./Picture/Percent.png";
 import Green from "./Picture/Green.png";
 import Yellow from "./Picture/Yellow.png";
@@ -20,7 +20,9 @@ function Result(props) {
   const [antisaccade, setAntisaccade] = useState(0);
   const [smooth, setSmooth] = useState(0);
   const [vpc, setVpc] = useState(0);
-  //
+  const loadFile = () => {
+    window.open(pdf);
+  };
   useEffect(() => {
     axios
       .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
@@ -97,7 +99,7 @@ function Result(props) {
                 />
               </div>
               <div className="row" style={{ font: "bold 5rem Anuphan" }}>
-                <button className="btn btn-danger">
+                <button className="btn btn-danger" onClick={loadFile}>
                   <h3>ติดต่อแพทย์</h3>
                 </button>
               </div>
