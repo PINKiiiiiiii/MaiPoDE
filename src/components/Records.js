@@ -97,7 +97,8 @@ function Records(props) {
                 }}
               >
                 <Circle
-                  progress={result.toFixed(1)}
+                  progress={19.6}
+                  // {result.toFixed(1)}
                   size={245}
                   lineWidth={50}
                   progressColor={
@@ -149,7 +150,7 @@ function Records(props) {
                   {
                     type: "bar",
                     x: ["ม.ค.", "ก.พ.", "มี.ค."],
-                    y: [20, 30, 32],
+                    y: [15, 19, 20],
                   },
                 ]}
                 layout={{
