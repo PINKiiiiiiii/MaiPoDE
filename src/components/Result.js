@@ -24,28 +24,35 @@ function Result(props) {
     window.open(pdf);
   };
   useEffect(() => {
-    axios
-      .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
-        id: props.storageId,
-      })
-      .then((response) => {
-        // handle success
-        setAll(response.data.PredictionAll * 100);
-        console.log(response.data.PredictionParts[0] * 100);
-        setFixation(response.data.PredictionParts[1] * 100);
-        setProsaccade(response.data.PredictionParts[2] * 100);
-        setAntisaccade(response.data.PredictionParts[3] * 100);
-        setSmooth(response.data.PredictionParts[4] * 100);
-        setVpc(response.data.PredictionParts[5] * 100);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function () {
-        isLoading(false);
-      });
-  }, []);
+    // axios
+    //   .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
+    //     id: props.storageId,
+    //   })
+    //   .then((response) => {
+    //     // handle success
+    //     setAll(response.data.PredictionAll * 100);
+    //     console.log(response.data.PredictionParts[0] * 100);
+    //     setFixation(response.data.PredictionParts[1] * 100);
+    //     setProsaccade(response.data.PredictionParts[2] * 100);
+    //     setAntisaccade(response.data.PredictionParts[3] * 100);
+    //     setSmooth(response.data.PredictionParts[4] * 100);
+    //     setVpc(response.data.PredictionParts[5] * 100);
+    //   })
+    //   .catch(function (error) {
+    //     // handle error
+    //     console.log(error);
+    //   })
+    //   .finally(function () {
+    //     isLoading(false);
+    //   });
+    setAll(19.6);
+    setFixation(5.1);
+    setProsaccade(10.2);
+    setAntisaccade(20.3);
+    setSmooth(8.3);
+    setVpc(18.9);
+    isLoading(false);
+  }, [isLoading]);
   if (!loading) {
     return (
       <div className="container-fluid bg-blue" style={{ padding: "0em" }}>
@@ -115,7 +122,7 @@ function Result(props) {
                     {
                       type: "bar",
                       x: ["ม.ค.", "ก.พ.", "มี.ค."],
-                      y: [20, 30, 94],
+                      y: [15, 19, 20],
                     },
                   ]}
                   layout={{
