@@ -3,7 +3,7 @@ import webgazer from "../../Scripts/Webgazer/index";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import vpc from "./../Video/Fixation.mp4";
+import vpc from "./../Video/vpctask.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import vpcAudio from "./../../PoDE/Audio/vpctask.mp3";
 import { doc, updateDoc } from "firebase/firestore";

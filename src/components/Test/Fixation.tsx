@@ -82,9 +82,8 @@ const Fixation: React.FC<any> = (props) => {
       btn.style.borderRadius = "45px";
       btn.style.fontFamily = "Anuphan";
       btn.addEventListener("click", function () {
-        navigate("/signedin/result");
-        webgazer.end();
-        // webgazer.pause();
+        navigate("/prosaccade");
+        webgazer.pause();
 
         // .then(() => {
         //   console.log(link);

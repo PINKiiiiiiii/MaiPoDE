@@ -3,7 +3,7 @@ import webgazer from "../../Scripts/Webgazer/index";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import prosaccade from "./../Video/Fixation.mp4";
+import prosaccade from "./../Video/prosaccade.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import prosaccadeAudio from "./../../PoDE/Audio/prosaccade.mp3";
 import { doc, updateDoc } from "firebase/firestore";
