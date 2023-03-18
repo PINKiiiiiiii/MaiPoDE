@@ -13,6 +13,7 @@ import Prosaccade from "./components/Test/Prosaccade";
 import Antisaccade from "./components/Test/Antisaccade";
 import Smoothpursuit from "./components/Test/Smoothpursuit";
 import VpcTask from "./components/Test/VpcTask";
+import BasicDocument from "./components/BasicDocument";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import db from "./components/firebase/firebaseConfig";
 
@@ -68,6 +69,10 @@ function App(props) {
       <Route
         path="/vpctask"
         element={<VpcTask id={id} storageId={storageId} />}
+      />
+      <Route
+        path="report"
+        element={<BasicDocument id={id} storageId={storageId} />}
       />
     </Routes>
   );

@@ -20,9 +20,9 @@ function ResultDoc() {
       }}
     >
       <div className="row mb-4">
-        <div className="col-5">
+        <div className="col-8">
           <div className="widget">
-            <h2 className="text-b">ความคล้ายโรคอัลไซเมอร์</h2>
+            <h2 className="text-b text-center">ความคล้ายโรคอัลไซเมอร์</h2>
             <div
               className="row mb-4"
               style={{
@@ -32,12 +32,14 @@ function ResultDoc() {
               }}
             >
               <Circle
-                progress={35}
+                progress={19.6}
                 size={300}
                 lineWidth={50}
-                progressColor="cornflowerblue"
+                progressColor="#0daa00"
+                textColor="#0daa00"
                 textStyle={{
                   font: "bold 5rem Anuphan",
+                  color: "#0daa00",
                 }}
                 roundedStroke={true}
                 showPercentage={true}
@@ -46,55 +48,58 @@ function ResultDoc() {
             </div>
           </div>
         </div>
-        <div className="col-7">
+        <div className="col-4">
           <div className="widget">
-            <div className="row text-center wrapper-center mb-3 text-b">
-              <h2>เกณฑ์ความคล้ายโรคอัลไซเมอร์</h2>
-              <img alt="" src={Percent} style={{ width: "90%" }} />
+            <div className="row text-center wrapper-center mb-4 text-b">
+              <h2>ข้อมูลส่วนตัว</h2>
             </div>
             <div className="row mb-3 wrapper-center">
-              <div className="col-4 text-b">
-                <h4>คล้ายเสียงปกติ</h4>
+              <div className="col-5 text-b">
+                <h4>ชื่อ</h4>
               </div>
-              <div className="col-3">
-                <img alt="" src={Green} style={{ width: "80%" }} />
-              </div>
-              <div className="col-5 text-gray">
-                <h4>คล้ายเสียงปกติ</h4>
+              <div className="col-7 text-b">
+                <h4>สมศรี ไพรินทราภา</h4>
               </div>
             </div>
 
             <div className="row mb-3 wrapper-center">
-              <div className="col-4 text-b">
-                <h4>คล้ายคลึงต่ำ</h4>
+              <div className="col-5 text-b">
+                <h4>อายุ</h4>
               </div>
-              <div className="col-3">
-                <img alt="" src={Yellow} style={{ width: "80%" }} />
-              </div>
-              <div className="col-5 text-gray">
-                <h4>คล้ายเสียงปกติ</h4>
+              <div className="col-7 text-b">
+                <h4>50</h4>
               </div>
             </div>
             <div className="row mb-3 wrapper-center">
-              <div className="col-4 text-b">
-                <h4>คล้ายคลึงปานกลาง</h4>
+              <div className="col-5 text-b">
+                <h4>เพศ</h4>
               </div>
-              <div className="col-3">
-                <img alt="" src={Orange} style={{ width: "80%" }} />
-              </div>
-              <div className="col-5 text-gray">
-                <h4>คล้ายเสียงปกติ</h4>
+              <div className="col-7 text-b">
+                <h4>หญิง</h4>
               </div>
             </div>
-            <div className="row mb-1 wrapper-center">
-              <div className="col-4 text-b">
-                <h4>คล้ายคลึงสูง</h4>
+            <div className="row mb-3 wrapper-center">
+              <div className="col-5 text-b">
+                <h4>กรุ๊ปเลือด</h4>
               </div>
-              <div className="col-3">
-                <img alt="" src={Red} style={{ width: "80%" }} />
+              <div className="col-7 text-b">
+                <h4>B</h4>
               </div>
-              <div className="col-5 text-gray">
-                <h4>คล้ายเสียงปกติ</h4>
+            </div>
+            <div className="row mb-3 wrapper-center">
+              <div className="col-5 text-b">
+                <h4>น้ำหนัก</h4>
+              </div>
+              <div className="col-7 text-b">
+                <h4>56</h4>
+              </div>
+            </div>
+            <div className="row mb-3 wrapper-center">
+              <div className="col-5 text-b">
+                <h4>ส่วนสูง</h4>
+              </div>
+              <div className="col-7 text-b">
+                <h4>160</h4>
               </div>
             </div>
           </div>
@@ -103,15 +108,16 @@ function ResultDoc() {
       <div className="row mb-4">
         <div className="col-12">
           <div className="widget">
+            <h2 className="text-b text-center">ผลการตรวจ 4 ครั้งก่อนหน้า</h2>
             <div className="row">
               <div className="col">
-                <h4 className="text-b text-center">การจ้องจุด</h4>
                 <div className="row mt-4">
                   <Circle
-                    progress={35}
+                    progress={18.7}
                     size={250}
                     lineWidth={50}
-                    progressColor="#00cdd0"
+                    progressColor="#0daa00"
+                    textColor="#0daa00"
                     textStyle={{
                       font: "bold 5rem Anuphan",
                     }}
@@ -122,13 +128,13 @@ function ResultDoc() {
                 </div>
               </div>
               <div className="col">
-                <h4 className="text-b text-center">การมองตามจุด</h4>
                 <div className="row mt-4">
                   <Circle
-                    progress={35}
+                    progress={15.6}
                     size={250}
                     lineWidth={50}
-                    progressColor="#00cdd0"
+                    progressColor="#0daa00"
+                    textColor="#0daa00"
                     textStyle={{
                       font: "bold 5rem Anuphan",
                     }}
@@ -139,13 +145,13 @@ function ResultDoc() {
                 </div>
               </div>
               <div className="col">
-                <h4 className="text-b text-center">การมองหลีกเลี่ยงจุด</h4>
                 <div className="row mt-4">
                   <Circle
-                    progress={35}
+                    progress={12.5}
                     size={250}
                     lineWidth={50}
-                    progressColor="#00cdd0"
+                    progressColor="#0daa00"
+                    textColor="#0daa00"
                     textStyle={{
                       font: "bold 5rem Anuphan",
                     }}
@@ -156,30 +162,13 @@ function ResultDoc() {
                 </div>
               </div>
               <div className="col">
-                <h4 className="text-b text-center">การมองตามจุดเคลื่อนที่</h4>
                 <div className="row mt-4">
                   <Circle
-                    progress={35}
+                    progress={10.1}
                     size={250}
                     lineWidth={50}
-                    progressColor="#00cdd0"
-                    textStyle={{
-                      font: "bold 5rem Anuphan",
-                    }}
-                    roundedStroke={true}
-                    showPercentage={true}
-                    showPercentageSymbol={true}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <h4 className="text-b text-center">การแยกแยะภาพ</h4>
-                <div className="row mt-4">
-                  <Circle
-                    progress={35}
-                    size={250}
-                    lineWidth={50}
-                    progressColor="#00cdd0"
+                    progressColor="#0daa00"
+                    textColor="#0daa00"
                     textStyle={{
                       font: "bold 5rem Anuphan",
                     }}
@@ -205,14 +194,14 @@ function ResultDoc() {
                   {
                     type: "line",
                     x: ["1", "2", "3", "4", "5"],
-                    y: [20, 30, 50, 78, 94],
+                    y: [10.1, 12.5, 15.6, 18.7, 19.6],
                   },
                 ]}
                 layout={{
                   title: "สถิติการทำแบบทดสอบแต่ละครั้ง",
                   font: { size: 23, family: "Anuphan" },
                   width: 1415,
-                  height: 500,
+                  height: 650,
                   fontFamily: "Anuphan",
                 }}
               />

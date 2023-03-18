@@ -1,5 +1,6 @@
 import Circle from "react-circle";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "react-circular-progressbar/dist/styles.css";
 import pdf from "./File/Medical Report.pdf";
 import Percent from "./Picture/Percent.png";
@@ -7,51 +8,52 @@ import Green from "./Picture/Green.png";
 import Yellow from "./Picture/Yellow.png";
 import Orange from "./Picture/Orange.png";
 import Red from "./Picture/Red.png";
+import Report from "./BasicDocument";
 import axios from "axios";
 import Plot from "react-plotly.js";
 
 function Result(props) {
+  const navigate = useNavigate();
   console.log(props.storageId);
   const [loading, isLoading] = useState(true);
   const [all, setAll] = useState(0);
-  const [calibrate, setCalibrate] = useState(0);
   const [fixation, setFixation] = useState(0);
   const [prosaccade, setProsaccade] = useState(0);
   const [antisaccade, setAntisaccade] = useState(0);
   const [smooth, setSmooth] = useState(0);
   const [vpc, setVpc] = useState(0);
   const loadFile = () => {
-    window.open(pdf);
+    navigate("/report");
   };
   useEffect(() => {
-    // axios
-    //   .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
-    //     id: props.storageId,
-    //   })
-    //   .then((response) => {
-    //     // handle success
-    //     setAll(response.data.PredictionAll * 100);
-    //     console.log(response.data.PredictionParts[0] * 100);
-    //     setFixation(response.data.PredictionParts[1] * 100);
-    //     setProsaccade(response.data.PredictionParts[2] * 100);
-    //     setAntisaccade(response.data.PredictionParts[3] * 100);
-    //     setSmooth(response.data.PredictionParts[4] * 100);
-    //     setVpc(response.data.PredictionParts[5] * 100);
-    //   })
-    //   .catch(function (error) {
-    //     // handle error
-    //     console.log(error);
-    //   })
-    //   .finally(function () {
-    //     isLoading(false);
-    //   });
-    setAll(19.6);
-    setFixation(5.1);
-    setProsaccade(10.2);
-    setAntisaccade(20.3);
-    setSmooth(8.3);
-    setVpc(18.9);
-    isLoading(false);
+    axios
+      .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
+        id: props.storageId,
+      })
+      .then((response) => {
+        // handle success
+        setAll(response.data.PredictionAll * 100);
+        console.log(response.data.PredictionParts[0] * 100);
+        setFixation(response.data.PredictionParts[1] * 100);
+        setProsaccade(response.data.PredictionParts[2] * 100);
+        setAntisaccade(response.data.PredictionParts[3] * 100);
+        setSmooth(response.data.PredictionParts[4] * 100);
+        setVpc(response.data.PredictionParts[5] * 100);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        isLoading(false);
+      });
+    // setAll(19.6);
+    // setFixation(5.1);
+    // setProsaccade(10.2);
+    // setAntisaccade(20.3);
+    // setSmooth(8.3);
+    // setVpc(18.9);
+    // isLoading(false);
   }, [isLoading]);
   if (!loading) {
     return (
@@ -64,7 +66,7 @@ function Result(props) {
             marginLeft: "60px",
           }}
         >
-          <div className="col-5">
+          <div className="col-7">
             <div className="widget">
               <h2 className="text-b text-center">ความคล้ายโรคอัลไซเมอร์</h2>
               <div
@@ -77,7 +79,7 @@ function Result(props) {
               >
                 <Circle
                   progress={all.toFixed(1)}
-                  size={270}
+                  size={300}
                   lineWidth={50}
                   progressColor={
                     all >= 75
@@ -106,13 +108,13 @@ function Result(props) {
                 />
               </div>
               <div className="row" style={{ font: "bold 5rem Anuphan" }}>
-                <button className="btn btn-danger" onClick={loadFile}>
-                  <h3>ติดต่อแพทย์</h3>
+                <button className="btn btn-orange" onClick={loadFile}>
+                  <h3>ดาวน์โหลดรายงานทางการแพทย์</h3>
                 </button>
               </div>
             </div>
           </div>
-          <div className="col-7">
+          <div className="col-5">
             <div className="widget">
               {/* <h2 className="text-b">ผลการตรวจครั้งล่าสุด</h2> */}
               <div style={{ width: "100%" }}>
@@ -128,8 +130,8 @@ function Result(props) {
                   layout={{
                     title: "ผลการตรวจครั้งล่าสุด",
                     font: { size: 23, family: "Anuphan" },
-                    width: 750,
-                    height: 414,
+                    width: 520,
+                    height: 444,
                     fontFamily: "Anuphan",
                   }}
                 />
@@ -137,84 +139,8 @@ function Result(props) {
             </div>
           </div>
         </div>
-        <div className="container-result mt-4 text-b">
-          <div className="row text-center wrapper-center mb-4">
-            <h2>เกณฑ์ความคล้ายโรคอัลไซเมอร์</h2>
-            <img alt="" src={Percent} style={{ width: "90%" }} />
-          </div>
-          <div className="row mb-3 wrapper-center">
-            <div className="col-3">
-              <h3>คล้ายเสียงปกติ</h3>
-            </div>
-            <div className="col-3">
-              <img alt="" src={Green} style={{ width: "90%" }} />
-            </div>
-            <div className="col-6">
-              <h4 style={{ color: "#0daa00" }}>
-                คุณไม่มีความเสี่ยงในการเป็นโรคอัลไซเมอร์
-                แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
-              </h4>
-            </div>
-          </div>
-
-          <div className="row mb-3 wrapper-center">
-            <div className="col-3">
-              <h3>คล้ายคลึงต่ำ</h3>
-            </div>
-            <div className="col-3">
-              <img alt="" src={Yellow} style={{ width: "90%" }} />
-            </div>
-            <div className="col-6">
-              <h4 style={{ color: "#f9b209" }}>
-                คุณมีความเสี่ยงเล็กน้อยในการเป็นโรคอัลไซเมอร์
-                แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
-              </h4>
-            </div>
-          </div>
-          <div className="row mb-3 wrapper-center">
-            <div className="col-3">
-              <h3>คล้ายคลึงปานกลาง</h3>
-            </div>
-            <div className="col-3">
-              <img alt="" src={Orange} style={{ width: "90%" }} />
-            </div>
-            <div className="col-6">
-              <h4 style={{ color: "#ff8f2f" }}>
-                โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายค่อนข้างสูง
-                หากได้ผลดังเดิม ควรไปตรวจที่โรงพยาบาล เพื่อให้ได้ผลที่ชัดเจนขึ้น
-              </h4>
-            </div>
-          </div>
-          <div className="row mb-5 wrapper-center">
-            <div className="col-3">
-              <h3>คล้ายคลึงสูง</h3>
-            </div>
-            <div className="col-3">
-              <img alt="" src={Red} style={{ width: "90%" }} />
-            </div>
-            <div className="col-6">
-              <h4 style={{ color: "#d93000" }}>
-                โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายสูง หากได้ผลดังเดิม
-                ควรไปตรวจที่โรงพยาบาลโดยด่วน เพื่อให้ได้ผลที่ชัดเจนขึ้น
-              </h4>
-            </div>
-          </div>
-          <h3 className="text-gray">
-            ควรกลับมาทำแบบทดสอบทุก ๆ เดือน เพื่อติดตาม
-            และประเมินความเสี่ยงในการเป็นโรคอัลไซเมอร์อย่างสม่ำเสมอ
-          </h3>
-          <p className="text-gray">
-            * นี่เป็นเพียงการประเมินขั้นต้นเท่านั้น
-            หากต้องการตรวจอย่างละเอียดมากยิ่งขึ้น ควรปรึกษาแพทย์
-            เพื่อทำการตรวจที่โรงพยาบาล
-          </p>
-        </div>
-        <div className="row text-center mb-4">
-          <h4 style={{ color: "#4953f5", marginBottom: "10px" }}>ผลการทดสอบ</h4>
-          <h1 className="text-b">ความคล้ายโรคอัลไซเมอร์ในการมองแต่ละด้าน</h1>
-        </div>
         <div
-          className="row mb-5"
+          className="row mt-4"
           style={{
             marginRight: "60px",
             marginLeft: "60px",
@@ -222,7 +148,7 @@ function Result(props) {
         >
           <div className="col">
             <div className="widget">
-              <h5 className="text-b">การจ้องจุด</h5>
+              <h4 className="text-b text-center">การจ้องจุด</h4>
               <div className="row">
                 <Circle
                   progress={fixation.toFixed(1)}
@@ -259,7 +185,7 @@ function Result(props) {
           </div>
           <div className="col">
             <div className="widget">
-              <h5 className="text-b">การมองตามจุด</h5>
+              <h4 className="text-b text-center">การมองตามจุด</h4>
               <div className="row">
                 <Circle
                   progress={prosaccade.toFixed(1)}
@@ -295,7 +221,7 @@ function Result(props) {
           </div>
           <div className="col">
             <div className="widget">
-              <h5 className="text-b">การมองหลีกเลี่ยงจุด</h5>
+              <h4 className="text-b text-center">การมองหลีกเลี่ยงจุด</h4>
               <div className="row">
                 <Circle
                   progress={antisaccade.toFixed(1)}
@@ -331,7 +257,7 @@ function Result(props) {
           </div>
           <div className="col">
             <div className="widget">
-              <h5 className="text-b">การมองตามจุดเคลื่อนที่</h5>
+              <h4 className="text-b text-center">การมองจุดเคลื่อนที่</h4>
               <div className="row">
                 <Circle
                   progress={smooth.toFixed(1)}
@@ -367,7 +293,7 @@ function Result(props) {
           </div>
           <div className="col">
             <div className="widget">
-              <h5 className="text-b">การแยกแยะภาพ</h5>
+              <h4 className="text-b text-center">การแยกแยะภาพ</h4>
               <div className="row">
                 <Circle
                   progress={vpc.toFixed(1)}
@@ -402,13 +328,88 @@ function Result(props) {
             </div>
           </div>
         </div>
+
+        <div className="row text-center mt-5">
+          <h1 className="text-b">เกณฑ์ความคล้ายโรคอัลไซเมอร์</h1>
+        </div>
+        <div className="container-result text-b">
+          <div className="row text-center wrapper-center mb-3">
+            <img alt="" src={Percent} style={{ width: "70%" }} />
+          </div>
+          <div className="row mb-3 wrapper-center">
+            <div className="col-3">
+              <h3>คล้ายเสียงปกติ</h3>
+            </div>
+            <div className="col-2">
+              <img alt="" src={Green} style={{ width: "80%" }} />
+            </div>
+            <div className="col-7">
+              <h4 style={{ color: "#0daa00" }}>
+                คุณไม่มีความเสี่ยงในการเป็นโรคอัลไซเมอร์
+                แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
+              </h4>
+            </div>
+          </div>
+
+          <div className="row mb-3 wrapper-center">
+            <div className="col-3">
+              <h3>คล้ายคลึงต่ำ</h3>
+            </div>
+            <div className="col-2">
+              <img alt="" src={Yellow} style={{ width: "80%" }} />
+            </div>
+            <div className="col-7">
+              <h4 style={{ color: "#f9b209" }}>
+                คุณมีความเสี่ยงเล็กน้อยในการเป็นโรคอัลไซเมอร์
+                แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
+              </h4>
+            </div>
+          </div>
+          <div className="row mb-3 wrapper-center">
+            <div className="col-3">
+              <h3>คล้ายคลึงปานกลาง</h3>
+            </div>
+            <div className="col-2">
+              <img alt="" src={Orange} style={{ width: "80%" }} />
+            </div>
+            <div className="col-7">
+              <h4 style={{ color: "#ff8f2f" }}>
+                โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายค่อนข้างสูง
+                หากได้ผลดังเดิม ควรไปตรวจที่โรงพยาบาล เพื่อให้ได้ผลที่ชัดเจนขึ้น
+              </h4>
+            </div>
+          </div>
+          <div className="row mb-5 wrapper-center">
+            <div className="col-3">
+              <h3>คล้ายคลึงสูง</h3>
+            </div>
+            <div className="col-2">
+              <img alt="" src={Red} style={{ width: "80%" }} />
+            </div>
+            <div className="col-7">
+              <h4 style={{ color: "#d93000" }}>
+                โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายสูง หากได้ผลดังเดิม
+                ควรไปตรวจที่โรงพยาบาลโดยด่วน เพื่อให้ได้ผลที่ชัดเจนขึ้น
+              </h4>
+            </div>
+          </div>
+          <h3 className="text-gray">
+            ควรกลับมาทำแบบทดสอบทุก ๆ เดือน เพื่อติดตาม
+            และประเมินความเสี่ยงในการเป็นโรคอัลไซเมอร์อย่างสม่ำเสมอ
+          </h3>
+          <p className="text-gray">
+            * นี่เป็นเพียงการประเมินขั้นต้นเท่านั้น
+            หากต้องการตรวจอย่างละเอียดมากยิ่งขึ้น ควรปรึกษาแพทย์
+            เพื่อทำการตรวจที่โรงพยาบาล
+          </p>
+        </div>
       </div>
     );
   } else {
     return (
-      <div class="text-center text-primary" style={{ marginTop: "300px" }}>
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center text-primary" style={{ marginTop: "300px" }}>
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );

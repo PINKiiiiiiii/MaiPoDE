@@ -7,6 +7,7 @@ import Test from "./Test";
 import Records from "./Records";
 import Alzheimer from "./Alzheimer";
 import Result from "./Result";
+import BasicDocument from "./BasicDocument";
 import { useState, useEffect } from "react";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/firebaseConfig";
@@ -126,6 +127,7 @@ function Navbar(props) {
             />
           }
         />
+        
       </Routes>
     </div>
   );

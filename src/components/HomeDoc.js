@@ -170,10 +170,7 @@ function HomeDoc(props) {
         </div>
 
         <div className="col-4">
-          <div
-            className="widget"
-            style={{ paddingBottom: "0px", paddingTop: "0px" }}
-          >
+          <div className="widget" style={{ padding: "0px" }}>
             {/* <div className="row mb-0">
               <h5 className="text-gray">
                 จำนวนผู้ที่เสี่ยงเป็นโรคอัลไซเมอร์ในแต่ละเดือน
@@ -200,8 +197,8 @@ function HomeDoc(props) {
                 layout={{
                   title: "จำนวนผู้ที่เสี่ยงเป็นโรคอัลไซเมอร์ในแต่ละเดือน",
                   font: { size: 14, family: "Anuphan" },
-                  width: 430,
-                  height: 312,
+                  width: 460,
+                  height: 313,
                   fontFamily: "Anuphan",
                 }}
               />

@@ -86,7 +86,7 @@ function Records(props) {
           <div className="col-6">
             <div className="widget">
               <h4 className="text-b text-center">
-                % ความเสี่ยงในการเป็นอัลไซเมอร์ล่าสุด
+                ความคล้ายโรคอัลไซเมอร์ล่าสุด
               </h4>
               <div
                 className="row mb-4"
@@ -543,9 +543,9 @@ function Records(props) {
     );
   } else {
     return (
-      <div class="text-center text-primary" style={{ marginTop: "300px" }}>
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="text-center text-primary" style={{ marginTop: "300px" }}>
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );

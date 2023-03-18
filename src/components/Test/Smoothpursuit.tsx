@@ -3,7 +3,7 @@ import webgazer from "../../Scripts/Webgazer/index";
 import { useNavigate } from "react-router-dom";
 import "../WebgazerCanvas";
 import "./../../PoDE/css/video.css";
-import smoothpursuit from "./../Video/smoothpursuit.mp4";
+import smoothpursuit from "./../Video/Fixation.mp4";
 import ReactAudioPlayer from "react-audio-player";
 import smoothpursuitAudio from "./../../PoDE/Audio/smoothpursuit.mp3";
 import { doc, updateDoc } from "firebase/firestore";

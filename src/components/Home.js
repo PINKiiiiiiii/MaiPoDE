@@ -12,20 +12,20 @@ import hero from "./Video/hero.mp4";
 import axios from "axios";
 
 function Home(props) {
-  useEffect(() => {
-    axios
-      .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
-        id: "dnUztq4KUUqZ1cdrFHRZ",
-      })
-      .then((response) => {
-        // handle success
-        console.log(response.data.PredictionParts[1]);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
+  //       id: "dnUztq4KUUqZ1cdrFHRZ",
+  //     })
+  //     .then((response) => {
+  //       // handle success
+  //       console.log(response.data.PredictionParts[1]);
+  //     })
+  //     .catch(function (error) {
+  //       // handle error
+  //       console.log(error);
+  //     });
+  // }, []);
   const navigate = useNavigate();
   const handleClickTest = () => {
     navigate("/signedin/test");
@@ -53,7 +53,7 @@ function Home(props) {
             <h1
               className="text-white"
               style={{
-                fontSize: "42px",
+                fontSize: "41px",
                 marginTop: "30px",
                 marginBottom: "30px",
               }}
