@@ -97,6 +97,11 @@ select {
   align-items: center;
 }
 
+.start {
+  display: flex;
+  align-items: start;
+}
+
 .bg-green {
   background-color: #d1f7e56c;
 }

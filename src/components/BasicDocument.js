@@ -118,9 +118,6 @@ function BasicDocument(props) {
   }, []);
 
   if (!loading) {
-    console.log(result.day);
-    console.log(result.month);
-    console.log(result.year);
     return (
       <PDFViewer style={styles.viewer}>
         <Document>

@@ -32,11 +32,11 @@ function ResultDoc() {
               }}
             >
               <Circle
-                progress={19.6}
+                progress={50.2}
                 size={300}
                 lineWidth={50}
-                progressColor="#0daa00"
-                textColor="#0daa00"
+                progressColor="#ff8f2f"
+                textColor="#ff8f2f"
                 textStyle={{
                   font: "bold 5rem Anuphan",
                   color: "#0daa00",
@@ -113,7 +113,41 @@ function ResultDoc() {
               <div className="col">
                 <div className="row mt-4">
                   <Circle
-                    progress={18.7}
+                    progress={42.6}
+                    size={250}
+                    lineWidth={50}
+                    progressColor="#f9b209"
+                    textColor="#f9b209"
+                    textStyle={{
+                      font: "bold 5rem Anuphan",
+                    }}
+                    roundedStroke={true}
+                    showPercentage={true}
+                    showPercentageSymbol={true}
+                  />
+                </div>
+              </div>
+              <div className="col">
+                <div className="row mt-4">
+                  <Circle
+                    progress={37.8}
+                    size={250}
+                    lineWidth={50}
+                    progressColor="#f9b209"
+                    textColor="#f9b209"
+                    textStyle={{
+                      font: "bold 5rem Anuphan",
+                    }}
+                    roundedStroke={true}
+                    showPercentage={true}
+                    showPercentageSymbol={true}
+                  />
+                </div>
+              </div>
+              <div className="col">
+                <div className="row mt-4">
+                  <Circle
+                    progress={24.9}
                     size={250}
                     lineWidth={50}
                     progressColor="#0daa00"
@@ -130,41 +164,7 @@ function ResultDoc() {
               <div className="col">
                 <div className="row mt-4">
                   <Circle
-                    progress={15.6}
-                    size={250}
-                    lineWidth={50}
-                    progressColor="#0daa00"
-                    textColor="#0daa00"
-                    textStyle={{
-                      font: "bold 5rem Anuphan",
-                    }}
-                    roundedStroke={true}
-                    showPercentage={true}
-                    showPercentageSymbol={true}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="row mt-4">
-                  <Circle
-                    progress={12.5}
-                    size={250}
-                    lineWidth={50}
-                    progressColor="#0daa00"
-                    textColor="#0daa00"
-                    textStyle={{
-                      font: "bold 5rem Anuphan",
-                    }}
-                    roundedStroke={true}
-                    showPercentage={true}
-                    showPercentageSymbol={true}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="row mt-4">
-                  <Circle
-                    progress={10.1}
+                    progress={15.5}
                     size={250}
                     lineWidth={50}
                     progressColor="#0daa00"
@@ -194,7 +194,7 @@ function ResultDoc() {
                   {
                     type: "line",
                     x: ["1", "2", "3", "4", "5"],
-                    y: [10.1, 12.5, 15.6, 18.7, 19.6],
+                    y: [15.5, 24.9, 37.8, 42.6, 50.2],
                   },
                 ]}
                 layout={{

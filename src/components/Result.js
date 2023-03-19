@@ -47,12 +47,12 @@ function Result(props) {
       .finally(function () {
         isLoading(false);
       });
-    // setAll(19.6);
-    // setFixation(5.1);
-    // setProsaccade(10.2);
+    // setAll(50.2);
+    // setFixation(45.3);
+    // setProsaccade(65.8);
     // setAntisaccade(20.3);
-    // setSmooth(8.3);
-    // setVpc(18.9);
+    // setSmooth(47.9);
+    // setVpc(39.6);
     // isLoading(false);
   }, [isLoading]);
   if (!loading) {
@@ -124,7 +124,7 @@ function Result(props) {
                     {
                       type: "bar",
                       x: ["ม.ค.", "ก.พ.", "มี.ค."],
-                      y: [15, 19, 20],
+                      y: [39, 46, 50],
                     },
                   ]}
                   layout={{
@@ -340,11 +340,11 @@ function Result(props) {
             <div className="col-3">
               <h3>คล้ายเสียงปกติ</h3>
             </div>
-            <div className="col-2">
-              <img alt="" src={Green} style={{ width: "80%" }} />
+            <div className="col-2 start">
+              <h1 style={{ color: "#0daa00" }}>0 - 25</h1>
             </div>
             <div className="col-7">
-              <h4 style={{ color: "#0daa00" }}>
+              <h4 className="text-gray">
                 คุณไม่มีความเสี่ยงในการเป็นโรคอัลไซเมอร์
                 แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
               </h4>
@@ -355,11 +355,11 @@ function Result(props) {
             <div className="col-3">
               <h3>คล้ายคลึงต่ำ</h3>
             </div>
-            <div className="col-2">
-              <img alt="" src={Yellow} style={{ width: "80%" }} />
+            <div className="col-2 start">
+              <h1 style={{ color: "#f9b209" }}>26 - 50</h1>
             </div>
             <div className="col-7">
-              <h4 style={{ color: "#f9b209" }}>
+              <h4 className="text-gray">
                 คุณมีความเสี่ยงเล็กน้อยในการเป็นโรคอัลไซเมอร์
                 แต่ควรกลับมาทดสอบอย่างสม่ำเสมอ อย่างน้อยเดือนละ 1 ครั้ง
               </h4>
@@ -369,11 +369,11 @@ function Result(props) {
             <div className="col-3">
               <h3>คล้ายคลึงปานกลาง</h3>
             </div>
-            <div className="col-2">
-              <img alt="" src={Orange} style={{ width: "80%" }} />
+            <div className="col-2 start">
+              <h1 style={{ color: "#ff8f2f" }}>51 - 75</h1>
             </div>
             <div className="col-7">
-              <h4 style={{ color: "#ff8f2f" }}>
+              <h4 className="text-gray">
                 โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายค่อนข้างสูง
                 หากได้ผลดังเดิม ควรไปตรวจที่โรงพยาบาล เพื่อให้ได้ผลที่ชัดเจนขึ้น
               </h4>
@@ -383,11 +383,11 @@ function Result(props) {
             <div className="col-3">
               <h3>คล้ายคลึงสูง</h3>
             </div>
-            <div className="col-2">
-              <img alt="" src={Red} style={{ width: "80%" }} />
+            <div className="col-2 start">
+              <h1 style={{ color: "#d93000" }}>76 - 100</h1>
             </div>
-            <div className="col-7">
-              <h4 style={{ color: "#d93000" }}>
+            <div className="col-7 text-gray">
+              <h4>
                 โปรดตรวจซ้ำ เนื่องจากเปอร์เซ็นต์ความคล้ายสูง หากได้ผลดังเดิม
                 ควรไปตรวจที่โรงพยาบาลโดยด่วน เพื่อให้ได้ผลที่ชัดเจนขึ้น
               </h4>

@@ -382,9 +382,10 @@ function Alzheimer() {
           <div className="col-lg-4">
             <h2>เกี่ยวกับเรา</h2>
             <p>
-              BrainMED (Brain Medical Equipment for Screening Dementia) คือ
-              เครื่องมือช่วยคัดกรอง ประเมิน
-              และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
+              PoDE (Platform of Assisting the Early Detection of Alzheimer's
+              Disease with Eyes by AI) คือ
+              แพลตฟอร์มช่วยตรวจหาโรคอัลไซเมอร์ในระยะเริ่มต้นด้วยการติดตามการเคลื่อนที่ของดวงตา
+              โดยปัญญาประดิษฐ์
             </p>
             <div className="my-5 social">
               <a href="/" className="pl-0 pr-3">

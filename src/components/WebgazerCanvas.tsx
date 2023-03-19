@@ -442,13 +442,13 @@ const WebgazerCanvas: React.FC<any> = (props) => {
         >
           <Modal.Header closeButton={false}>
             <Modal.Title>
-              <Typography variant="h6">เริ่มทำการทดสอบความแม่นยำ</Typography>
+              <Typography variant="h4">เริ่มทำการทดสอบความแม่นยำ</Typography>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="row mt-0">
               <div className="col-12">
-                <Typography>
+                <Typography variant="h6">
                   มองจุดสีเขียวตรงกลางหน้าจอเป็นเวลา 5 วินาที
                   เพื่อทดสอบประสิทธิภาพการทำงานของการติดตามการเคลื่อนที่ของดวงตา
                 </Typography>
@@ -461,7 +461,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
               data-dismiss="modal"
               onClick={handleFiveSec}
             >
-              <Typography variant="subtitle1">เริ่มทดสอบ</Typography>
+              <Typography variant="h6">เริ่มทดสอบ</Typography>
             </button>
           </Modal.Footer>
         </Modal>
@@ -473,13 +473,13 @@ const WebgazerCanvas: React.FC<any> = (props) => {
         >
           <Modal.Header closeButton={false}>
             <Modal.Title>
-              <Typography variant="h6">เข้าสู่การทำแบบทดสอบ</Typography>
+              <Typography variant="h4">เข้าสู่การทำแบบทดสอบ</Typography>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="row mt-0">
               <div className="col-12">
-                <Typography>
+                <Typography variant="h6">
                   มีทั้งหมด 5 แบบทดสอบ
                   กรุณาเลื่อนหน้าของท่านให้อยู่ในกรอบสีเขียวตลอดเวลา
                   และเปิดเสียงเพื่อฟังคำแนะนำ
@@ -493,7 +493,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
               data-dismiss="modal"
               onClick={nextPage}
             >
-              <Typography variant="subtitle1">เริ่มทดสอบ</Typography>
+              <Typography variant="h6">เริ่มทดสอบ</Typography>
             </button>
           </Modal.Footer>
         </Modal>

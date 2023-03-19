@@ -83,7 +83,7 @@ const Fixation: React.FC<any> = (props) => {
       btn.style.fontFamily = "Anuphan";
       btn.addEventListener("click", function () {
         navigate("/prosaccade");
-        webgazer.pause();
+        // webgazer.pause();
 
         // .then(() => {
         //   console.log(link);

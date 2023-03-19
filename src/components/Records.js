@@ -97,7 +97,7 @@ function Records(props) {
                 }}
               >
                 <Circle
-                  progress={19.6}
+                  progress={50.2}
                   // {result.toFixed(1)}
                   size={245}
                   lineWidth={50}
@@ -131,26 +131,12 @@ function Records(props) {
           </div>
           <div className="col-6">
             <div className="widget" style={{ padding: "0px" }}>
-              {/* <h4 className="text-b" style={{ paddingBottom: "14px" }}>
-                ผลการตรวจแต่ละเดือน
-              </h4> */}
-              {/* <div style={{ width: "100%" }}> */}
-              {/* <BarChart
-                options={{
-                  defaults: {
-                    global: {
-                      defaultFontFamily: "Anuphan",
-                      defaultSize: "50px",
-                    },
-                  },
-                }}
-                /> */}
               <Plot
                 data={[
                   {
                     type: "bar",
                     x: ["ม.ค.", "ก.พ.", "มี.ค."],
-                    y: [15, 19, 20],
+                    y: [39, 46, 50],
                   },
                 ]}
                 layout={{
@@ -460,9 +446,10 @@ function Records(props) {
             <div className="col-lg-4">
               <h2>เกี่ยวกับเรา</h2>
               <p>
-                BrainMED (Brain Medical Equipment for Screening Dementia) คือ
-                เครื่องมือช่วยคัดกรอง ประเมิน
-                และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
+                PoDE (Platform of Assisting the Early Detection of Alzheimer's
+                Disease with Eyes by AI) คือ
+                แพลตฟอร์มช่วยตรวจหาโรคอัลไซเมอร์ในระยะเริ่มต้นด้วยการติดตามการเคลื่อนที่ของดวงตา
+                โดยปัญญาประดิษฐ์
               </p>
               <div className="my-5 social">
                 <a href="/" className="pl-0 pr-3">

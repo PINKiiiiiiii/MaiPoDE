@@ -215,18 +215,6 @@ function Home(props) {
         }}
       >
         <div className="row">
-          {/* <div className="col-3">
-            <div className="card" style={{ width: "100%", margin: "20px" }}>
-              <div className="card-body text-center" style={{ padding: "40px" }}>
-                <img alt="" src={info} style={{ width: "100px" }} />
-                <h3 className="card-title">กรอกข้อมูลส่วนตัว</h3>
-                <p className="card-text" style={{ fontSize: "20px" }}>
-                  ได้แก่ เพศ อายุ โรคประจำตัว
-                  เพื่อนำไปให้ปัญญาประดิษฐ์วิเคราะห์ผลร่วมกับการทดสอบดวงตา
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div className="col-4">
             <div className="card" style={{ width: "100%", margin: "20px" }}>
               <div
@@ -283,9 +271,10 @@ function Home(props) {
           <div className="col-lg-4">
             <h2>เกี่ยวกับเรา</h2>
             <p>
-              BrainMED (Brain Medical Equipment for Screening Dementia) คือ
-              เครื่องมือช่วยคัดกรอง ประเมิน
-              และติดตามภาวะเสื่อมถอยของสมองด้วยเทคโนโลยีปัญญาประดิษฐ์
+              PoDE (Platform of Assisting the Early Detection of Alzheimer's
+              Disease with Eyes by AI) คือ
+              แพลตฟอร์มช่วยตรวจหาโรคอัลไซเมอร์ในระยะเริ่มต้นด้วยการติดตามการเคลื่อนที่ของดวงตา
+              โดยปัญญาประดิษฐ์
             </p>
             <div className="my-5 social">
               <a href="/" className="pl-0 pr-3">
