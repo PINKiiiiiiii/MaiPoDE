@@ -97,8 +97,7 @@ function Records(props) {
                 }}
               >
                 <Circle
-                  progress={50.2}
-                  // {result.toFixed(1)}
+                  progress={result.toFixed(1)}
                   size={245}
                   lineWidth={50}
                   progressColor={
