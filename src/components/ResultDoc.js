@@ -24,7 +24,7 @@ function ResultDoc() {
           <div className="widget">
             <h2 className="text-b text-center">ความคล้ายโรคอัลไซเมอร์</h2>
             <div
-              className="row mb-4"
+              className="row mb-4 text-center"
               style={{
                 paddingLeft: "75px",
                 paddingRight: "75px",
@@ -33,7 +33,7 @@ function ResultDoc() {
             >
               <Circle
                 progress={50.2}
-                size={300}
+                size={350}
                 lineWidth={50}
                 progressColor="#ff8f2f"
                 textColor="#ff8f2f"
@@ -102,6 +102,14 @@ function ResultDoc() {
                 <h4>160</h4>
               </div>
             </div>
+            <div className="row mb-3 wrapper-center">
+              <div className="col-5 text-b">
+                <h4>วันที่ตรวจล่าสุด</h4>
+              </div>
+              <div className="col-7 text-b">
+                <h4>18/3/2023</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -113,11 +121,11 @@ function ResultDoc() {
               <div className="col">
                 <div className="row mt-4">
                   <Circle
-                    progress={42.6}
+                    progress={15.5}
                     size={250}
                     lineWidth={50}
-                    progressColor="#f9b209"
-                    textColor="#f9b209"
+                    progressColor="#0daa00"
+                    textColor="#0daa00"
                     textStyle={{
                       font: "bold 5rem Anuphan",
                     }}
@@ -125,6 +133,26 @@ function ResultDoc() {
                     showPercentage={true}
                     showPercentageSymbol={true}
                   />
+                  <h5 className="text-b mt-2 text-center">17/11/2022</h5>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="row mt-4">
+                  <Circle
+                    progress={24.9}
+                    size={250}
+                    lineWidth={50}
+                    progressColor="#0daa00"
+                    textColor="#0daa00"
+                    textStyle={{
+                      font: "bold 5rem Anuphan",
+                    }}
+                    roundedStroke={true}
+                    showPercentage={true}
+                    showPercentageSymbol={true}
+                  />
+                  <h5 className="text-b mt-2 text-center">14/12/2022</h5>
                 </div>
               </div>
               <div className="col">
@@ -142,16 +170,17 @@ function ResultDoc() {
                     showPercentage={true}
                     showPercentageSymbol={true}
                   />
+                  <h5 className="text-b mt-2 text-center">23/1/2023</h5>
                 </div>
               </div>
               <div className="col">
                 <div className="row mt-4">
                   <Circle
-                    progress={24.9}
+                    progress={42.6}
                     size={250}
                     lineWidth={50}
-                    progressColor="#0daa00"
-                    textColor="#0daa00"
+                    progressColor="#f9b209"
+                    textColor="#f9b209"
                     textStyle={{
                       font: "bold 5rem Anuphan",
                     }}
@@ -159,36 +188,19 @@ function ResultDoc() {
                     showPercentage={true}
                     showPercentageSymbol={true}
                   />
-                </div>
-              </div>
-              <div className="col">
-                <div className="row mt-4">
-                  <Circle
-                    progress={15.5}
-                    size={250}
-                    lineWidth={50}
-                    progressColor="#0daa00"
-                    textColor="#0daa00"
-                    textStyle={{
-                      font: "bold 5rem Anuphan",
-                    }}
-                    roundedStroke={true}
-                    showPercentage={true}
-                    showPercentageSymbol={true}
-                  />
+                  <h5 className="text-b mt-2 text-center">20/2/2023</h5>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className="col-12">
           <div className="widget">
-            {/* <h2 className="mb-4 text-center">สถิติการทำแบบทดสอบแต่ละครั้ง</h2>
-            <h5 className="text-b">%ความคล้าย</h5> */}
+            
             <div style={{ width: "100%" }}>
-              {/* <LineChart /> */}
+
               <Plot
                 data={[
                   {
@@ -209,7 +221,7 @@ function ResultDoc() {
             <h5 className="text-center mt-2 mb-0">ครั้งที่</h5>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -88,29 +88,47 @@ function BasicDocument(props) {
 
   useEffect(() => {
     const getData = async () => {
-      const docInfo = doc(db, "Users", props.id);
-      const information = await getDoc(docInfo);
+      // const docInfo = doc(db, "Users", props.id);
+      // const information = await getDoc(docInfo);
+      // setInfo({
+      //   name:
+      //     information.data().Name.First + "  " + information.data().Name.Last,
+      //   age: 2023 - information.data().Birthday.toDate().getFullYear(),
+      //   gender: information.data().Gender,
+      //   ad: information.data().FamilyHasAD ? "มี" : "ไม่มี",
+      //   blood: information.data().BloodGroup,
+      // });
+      // console.log(props.storageId);
+      // const docResult = doc(db, "Results", props.storageId);
+      // const result = await getDoc(docResult);
+      // setResult({
+      //   all: result.data().PredictionAll * 100,
+      //   fixation: result.data().PredictionParts[1] * 100,
+      //   pro: result.data().PredictionParts[2] * 100,
+      //   anti: result.data().PredictionParts[3] * 100,
+      //   smooth: result.data().PredictionParts[4] * 100,
+      //   vpc: result.data().PredictionParts[5] * 100,
+      //   day: result.data().Time.toDate().getDate(),
+      //   month: 1 + result.data().Time.toDate().getMonth(),
+      //   year: result.data().Time.toDate().getFullYear(),
+      // });
       setInfo({
-        name:
-          information.data().Name.First + "  " + information.data().Name.Last,
-        age: 2023 - information.data().Birthday.toDate().getFullYear(),
-        gender: information.data().Gender,
-        ad: information.data().FamilyHasAD ? "มี" : "ไม่มี",
-        blood: information.data().BloodGroup,
+        name: "ธนากร ทองใบ",
+        age: 50,
+        gender: "ชาย",
+        ad: "ไม่มี",
+        blood: "A",
       });
-      console.log(props.storageId);
-      const docResult = doc(db, "Results", props.storageId);
-      const result = await getDoc(docResult);
       setResult({
-        all: result.data().PredictionAll * 100,
-        fixation: result.data().PredictionParts[1] * 100,
-        pro: result.data().PredictionParts[2] * 100,
-        anti: result.data().PredictionParts[3] * 100,
-        smooth: result.data().PredictionParts[4] * 100,
-        vpc: result.data().PredictionParts[5] * 100,
-        day: result.data().Time.toDate().getDate(),
-        month: 1 + result.data().Time.toDate().getMonth(),
-        year: result.data().Time.toDate().getFullYear(),
+        all: 50.2,
+        fixation: 45.3,
+        pro: 65.8,
+        anti: 20.3,
+        smooth: 47.9,
+        vpc: 39.6,
+        day: 20,
+        month: 3,
+        year: 2023,
       });
       isLoading(false);
     };

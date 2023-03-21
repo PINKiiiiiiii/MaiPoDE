@@ -1,4 +1,4 @@
-import cambodia from "./Picture/us.jpg";
+import cambodia from "./Picture/about3.jpg";
 import Pinky from "./Picture/pinky.jpg";
 import Lenny from "./Picture/lenny.jpg";
 import Tin from "./Picture/tin.jpg";
