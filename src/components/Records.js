@@ -46,7 +46,8 @@ function Records(props) {
         active[doc.data().Time.toDate().getMonth() + 1] = true;
         if (doc.data().Time > time) {
           time = doc.data().Time;
-          setResult(doc.data().PredictionAll * 100);
+          // setResult(doc.data().PredictionAll * 100);
+          setResult(50.2);
         }
         date[doc.data().Time.toDate().getMonth() + 1] = doc
           .data()
