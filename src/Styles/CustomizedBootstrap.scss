@@ -117,6 +117,12 @@ $btn-active-border-tint-amount: 10%;
 .btn-orange {
   @include button-variant(#f8761f, #f8761f);
 }
+.btn-green {
+  @include button-variant(#00da92, #00da92);
+}
+.btn-pink {
+  @include button-variant(#ff7ff9, #ff7ff9);
+}
 
 @mixin col-base($size) {
   @include make-col-ready();

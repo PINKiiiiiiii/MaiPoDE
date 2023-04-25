@@ -54,14 +54,15 @@
 
 /* Calibration button styling */
 .calibration {
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
   background-color: red;
   opacity: 0.2;
-  border-color: black;
+  border-width: 7px;
+  border-color: #ffff1e;
   border-style: solid;
   position: fixed;
 }

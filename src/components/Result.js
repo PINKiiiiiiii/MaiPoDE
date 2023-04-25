@@ -26,10 +26,19 @@ function Result(props) {
     window.open(pdf);
     // navigate("/report");
   };
+  const nextPage = () => {
+    window.open(
+      "https://www.google.co.th/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%83%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%89%E0%B8%B1%E0%B8%99/"
+    );
+  };
+  const goBrain = () => {
+    navigate("/brain");
+  };
   useEffect(() => {
+    // console.log(props.storageId);
     // axios
     //   .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
-    //     id: props.storageId,
+    //     id: String(props.storageId),
     //   })
     //   .then((response) => {
     //     // handle success
@@ -75,7 +84,7 @@ function Result(props) {
                 style={{
                   paddingLeft: "85px",
                   paddingRight: "85px",
-                  paddingTop: "24px",
+                  paddingTop: "10px",
                 }}
               >
                 <Circle
@@ -109,8 +118,8 @@ function Result(props) {
                 />
               </div>
               <div className="row" style={{ font: "bold 5rem Anuphan" }}>
-                <button className="btn btn-orange" onClick={loadFile}>
-                  <h3>ดาวน์โหลดรายงานทางการแพทย์</h3>
+                <button className="btn btn-pink mb-2" onClick={goBrain}>
+                  <h2>ดาวน์โหลดรายงานทางการแพทย์</h2>
                 </button>
               </div>
             </div>
@@ -124,7 +133,7 @@ function Result(props) {
                   data={[
                     {
                       type: "bar",
-                      x: ["ม.ค.", "ก.พ.", "มี.ค."],
+                      x: ["ก.พ.", "มี.ค.", "เม.ย."],
                       y: [39, 46, 50],
                     },
                   ]}
@@ -328,6 +337,21 @@ function Result(props) {
               </div>
             </div>
           </div>
+        </div>
+        <div
+          className="row mt-4"
+          style={{
+            font: "bold 5rem Anuphan",
+            paddingLeft: "75px",
+            paddingRight: "75px",
+          }}
+        >
+          <button className="btn btn-orange mb-2" onClick={loadFile}>
+            <h3>ดาวน์โหลดรายงานทางการแพทย์</h3>
+          </button>
+          <button className="btn btn-blue btn-lg btn-block" onClick={nextPage}>
+            <h3>หาโรงพยาบาลใกล้เคียง</h3>
+          </button>
         </div>
 
         <div className="row text-center mt-5">

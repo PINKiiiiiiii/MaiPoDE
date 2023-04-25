@@ -10,6 +10,12 @@ import mail from "./Picture/mail.png";
 import call from "./Picture/Call.png";
 
 function Aboutus() {
+  const nextPage = () => {
+    window.open(
+      "https://www.google.co.th/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%83%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%89%E0%B8%B1%E0%B8%99/"
+    );
+  };
+
   return (
     <div className="container-fluid" style={{ padding: "0px" }}>
       <img alt="" src={cambodia} style={{ width: "100%", opacity: "0.3" }} />
@@ -241,17 +247,23 @@ function Aboutus() {
                     marginBottom: "20px",
                   }}
                 >
-                  ติดต่อเรา
+                  ติดต่อแพทย์
                 </h1>
                 <h5
                   className="text-gray"
                   style={{
-                    marginBottom: "70px",
+                    marginBottom: "50px",
                   }}
                 >
-                  สนใจสอบถามข้อมูล สามารถส่งข้อความ หรือติดต่อได้ที่
+                  สนใจสอบถามข้อมูลกับแพทย์ผู้เชี่ยวชาญโดยตรง สามารถส่งข้อความ
+                  หรือติดต่อได้ที่
                 </h5>
-                <div className="row">
+                <div
+                  className="row"
+                  style={{
+                    marginBottom: "30px",
+                  }}
+                >
                   <div className="col-6">
                     <div className="row">
                       <div className="col-2">
@@ -259,7 +271,7 @@ function Aboutus() {
                       </div>
                       <div className="col-10">
                         <h3 className="text-b">เบอร์โทร</h3>
-                        <p>+66 92 961 8504</p>
+                        <p>+66 53 936 150</p>
                       </div>
                     </div>
                   </div>
@@ -270,10 +282,20 @@ function Aboutus() {
                       </div>
                       <div className="col-10">
                         <h3 className="text-b">อีเมล</h3>
-                        <p>Lennythomas252@gmail.com</p>
+                        <p>medinfo@cmu.ac.th.</p>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div className="row">
+                  <button
+                    className="btn btn-green btn-lg btn-block"
+                    type="submit"
+                    style={{ width: "100%", fontSize: "20px" }}
+                    onClick={nextPage}
+                  >
+                    <h2>หาโรงพยาบาลใกล้เคียง</h2>
+                  </button>
                 </div>
               </div>
             </div>

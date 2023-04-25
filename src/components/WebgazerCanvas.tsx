@@ -368,7 +368,7 @@ const WebgazerCanvas: React.FC<any> = (props) => {
           ref={canvasRef}
           width="500"
           height="500"
-          style={{ cursor: "crosshair" }}
+          style={{ cursor: "crosshair", backgroundColor: "#00000" }}
         />
         <nav
           id="webgazer-navbar"
