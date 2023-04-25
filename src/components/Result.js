@@ -119,7 +119,7 @@ function Result(props) {
               </div>
               <div className="row" style={{ font: "bold 5rem Anuphan" }}>
                 <button className="btn btn-pink mb-2" onClick={goBrain}>
-                  <h2>ดาวน์โหลดรายงานทางการแพทย์</h2>
+                  <h2>ผลสมอง 3 มิติ</h2>
                 </button>
               </div>
             </div>
