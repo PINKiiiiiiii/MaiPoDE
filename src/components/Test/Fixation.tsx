@@ -60,16 +60,17 @@ const Fixation: React.FC<any> = (props) => {
         .join("\n");
       const dl: string = `data:text/csv,${csv}`;
       const storage = getStorage();
+      const DateNow = Date();
       const storageRef = ref(
         storage,
-        `${props.id + " fixation " + Date() + ".csv"}`
+        `${props.id + " fixation " + DateNow + ".csv"}`
       );
 
       // 'file' comes from the Blob or File API
       uploadString(storageRef, dl, "data_url");
       const docRef = doc(db, "Results", `${props.storageId}`);
       updateDoc(docRef, {
-        Fixation: `${props.id + " fixation " + Date() + ".csv"}`,
+        Fixation: `${props.id + " fixation " + DateNow + ".csv"}`,
       });
 
       // webgazer.showPredictionPoints(false);

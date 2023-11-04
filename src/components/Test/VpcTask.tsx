@@ -61,16 +61,17 @@ const VpcTask: React.FC<any> = (props) => {
         .join("\n");
       const dl: string = `data:text/csv,${csv}`;
       const storage = getStorage();
+      const DateNow = Date();
       const storageRef = ref(
         storage,
-        `${props.id + " vpc " + Date() + ".csv"}`
+        `${props.id + " vpc " + DateNow + ".csv"}`
       );
 
       // 'file' comes from the Blob or File API
       uploadString(storageRef, dl, "data_url");
       const docRef = doc(db, "Results", `${props.storageId}`);
       updateDoc(docRef, {
-        VPC: `${props.id + " vpc " + Date() + ".csv"}`,
+        VPC: `${props.id + " vpc " + DateNow + ".csv"}`,
       });
 
       // webgazer.showPredictionPoints(false);

@@ -3,7 +3,6 @@ import Circle from "react-circle";
 import check from "./Picture/check.png";
 import checkleft from "./Picture/checkleft.png";
 import "react-circular-progressbar/dist/styles.css";
-import BarChart from "./BarChart";
 import { useEffect, useState } from "react";
 import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
 import db from "./firebase/firebaseConfig";

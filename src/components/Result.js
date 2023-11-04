@@ -35,35 +35,35 @@ function Result(props) {
     navigate("/brain");
   };
   useEffect(() => {
-    // console.log(props.storageId);
-    // axios
-    //   .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
-    //     id: String(props.storageId),
-    //   })
-    //   .then((response) => {
-    //     // handle success
-    //     setAll(response.data.PredictionAll * 100);
-    //     console.log(response.data.PredictionParts[0] * 100);
-    //     setFixation(response.data.PredictionParts[1] * 100);
-    //     setProsaccade(response.data.PredictionParts[2] * 100);
-    //     setAntisaccade(response.data.PredictionParts[3] * 100);
-    //     setSmooth(response.data.PredictionParts[4] * 100);
-    //     setVpc(response.data.PredictionParts[5] * 100);
-    //   })
-    //   .catch(function (error) {
-    //     // handle error
-    //     console.log(error);
-    //   })
-    //   .finally(function () {
-    //     isLoading(false);
-    //   });
-    setAll(50.2);
-    setFixation(45.3);
-    setProsaccade(65.8);
-    setAntisaccade(20.3);
-    setSmooth(47.9);
-    setVpc(39.6);
-    isLoading(false);
+    console.log(props.storageId);
+    axios
+      .post("https://sixsegmentann-a6ge3gul2a-as.a.run.app", {
+        id: String(props.storageId),
+      })
+      .then((response) => {
+        // handle success
+        setAll(response.data.PredictionAll * 100);
+        console.log(response.data.PredictionParts[0] * 100);
+        setFixation(response.data.PredictionParts[1] * 100);
+        setProsaccade(response.data.PredictionParts[2] * 100);
+        setAntisaccade(response.data.PredictionParts[3] * 100);
+        setSmooth(response.data.PredictionParts[4] * 100);
+        setVpc(response.data.PredictionParts[5] * 100);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        isLoading(false);
+      });
+    // setAll(50.2);
+    // setFixation(45.3);
+    // setProsaccade(65.8);
+    // setAntisaccade(20.3);
+    // setSmooth(47.9);
+    // setVpc(39.6);
+    // isLoading(false);
   }, [isLoading]);
   if (!loading) {
     return (

@@ -62,16 +62,17 @@ const Prosaccade: React.FC<any> = (props) => {
         .join("\n");
       const dl: string = `data:text/csv,${csv}`;
       const storage = getStorage();
+      const DateNow = Date();
       const storageRef = ref(
         storage,
-        `${props.id + " prosaccade " + Date() + ".csv"}`
+        `${props.id + " prosaccade " + DateNow + ".csv"}`
       );
 
       // 'file' comes from the Blob or File API
       uploadString(storageRef, dl, "data_url");
       const docRef = doc(db, "Results", `${props.storageId}`);
       updateDoc(docRef, {
-        Prosaccade: `${props.id + " prosaccade " + Date() + ".csv"}`,
+        Prosaccade: `${props.id + " prosaccade " + DateNow + ".csv"}`,
       });
 
       // webgazer.showPredictionPoints(false);
