@@ -5,7 +5,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import SignupUser from "./components/SignupUser";
-import NavbarDoc from "./components/NavbarDoc";
 import WebgazerCanvas from "./components/WebgazerCanvas";
 import Fixation from "./components/Test/Fixation";
 import "./Styles/Style.css";
@@ -46,7 +45,6 @@ function App(props) {
         path="signedin/*"
         element={<Navbar id={id} storageId={storageId} />}
       />
-      <Route path="admin/*" element={<NavbarDoc />} />
       <Route
         path="/calibrate"
         element={<WebgazerCanvas id={id} setStorageId={setStorageId} />}
